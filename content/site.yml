@@ -1,0 +1,64 @@
+# 站点级内容。改这里 → 页面跟着变。不要把文案写进模板。
+# TODO: 开头的值是显式占位符,构建时会报警。不要猜,不要编。
+
+name: Chris Ziyu Kong
+
+# 申请主线定位句。来源:corpus/bio-and-narrative.md「一句话定位」
+tagline: >-
+  Information retrieval and retrieval-augmented intelligent systems, with an
+  emphasis on reliable knowledge access, evaluation, and scientific applications.
+
+# 首页自我介绍。风格红线:句子不过分工整、少抽象名词、保留个人语气。
+intro: |
+  I work on how retrieval systems decide what counts as a good answer, and on
+  whether we can tell when they get it wrong.
+
+  At Brown I build and evaluate retrieval pipelines for climate science
+  literature in Stephen Bach's group — where the hard part is evaluation, since
+  nobody hands you relevance labels for a corpus of research papers. Separately,
+  I audit where identity-related bias enters late-interaction retrieval scores,
+  down to individual query tokens.
+
+  Before graduate school I built agent systems in industry. That is where these
+  questions first showed up: the retrieval and memory layer, not the model,
+  decided whether the thing worked.
+
+affiliations:
+  - role: Sc.M. in Computer Science
+    org: Brown University
+    detail: 2025–2027
+  - role: Research Assistant, BATS Machine Learning Group
+    org: Advised by Prof. Stephen Bach
+    detail: 2026–
+  - role: B.A. in Computer and Data Science
+    org: New York University
+    detail: 2021–2024
+
+# 受众决策:学术为主、兼顾工业。这一块压在研究之下,定位是
+# 「研究问题的另一端有真实系统在跑」,不是技能罗列。
+engineering:
+  heading: Systems I have shipped
+  lead: >-
+    The research questions above are not abstract to me — I have had to answer
+    scaled-down versions of them in production.
+  items:
+    - "Built an end-to-end conversational agent for prediction markets: retrieval
+       over a curated internal knowledge base, tool calling, A/B testing, CI/CD."
+    - "Context compression and memory management that cut response latency by
+       roughly 70% while lowering token use."
+    - "Data pipelines over 1 TB of remote sensing imagery for an ecology lab,
+       integrating Google, NASA and USGS APIs."
+
+links:
+  email: chriskong1103@gmail.com
+  github: TODO:github-handle
+  scholar: TODO:scholar-url-or-remove
+  cv: /cv
+  cv_pdf: /Chris-Kong-CV.pdf
+
+# 明确不放的东西,写在这里防止以后手滑加回来。见 CLAUDE.md §2。
+omitted:
+  - phone            # CV 上有,网页上不放
+  - caig_demo        # 需先取得组里与 Baylor 同意
+  - review_scores    # 审稿分数永不外露
+  - skills_bar       # PhD 申请里是负信号

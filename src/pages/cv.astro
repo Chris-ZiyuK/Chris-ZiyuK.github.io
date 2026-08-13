@@ -1,0 +1,30 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import { site, isTodo } from '../lib/site';
+
+const entry = await getEntry('cv', 'cv');
+if (!entry) throw new Error('content/cv.md 不见了');
+const { Content } = await render(entry);
+const { updated, pdf } = entry.data;
+---
+<Base title={`CV — ${site.name}`} current="cv">
+  <main class="wrap">
+    <header class="hero rise" style="padding-bottom:0">
+      <h1>Curriculum Vitae</h1>
+      <div class="cv-bar">
+        <span class="yr">Updated {updated}</span>
+        {isTodo(pdf)
+          ? <span class="todo">{pdf}</span>
+          : <a href={pdf}>Download PDF</a>}
+      </div>
+    </header>
+
+    <section class="sec cv rise">
+      <Content />
+    </section>
+
+    <Footer />
+  </main>
+</Base>

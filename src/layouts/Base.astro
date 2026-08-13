@@ -1,0 +1,40 @@
+---
+import '../styles/tokens.css';
+import '../styles/base.css';
+import { site } from '../lib/site';
+
+interface Props { title: string; current: 'home' | 'research' | 'cv' }
+const { title, current } = Astro.props;
+
+const nav = [
+  { href: '/', label: 'Home', key: 'home' },
+  { href: '/research/', label: 'Research', key: 'research' },
+  { href: '/cv/', label: 'CV', key: 'cv' },
+] as const;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={site.tagline} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={site.tagline} />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+</head>
+<body>
+  <nav class="topnav">
+    <div class="wrap">
+      <a class="home" href="/">{site.name}</a>
+      {nav.map((n) => (
+        <a class="nl" href={n.href} aria-current={current === n.key ? 'page' : undefined}>
+          {n.label}
+        </a>
+      ))}
+    </div>
+  </nav>
+  <slot />
+</body>
+</html>

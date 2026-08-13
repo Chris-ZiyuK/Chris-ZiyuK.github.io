@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import StatusPill from '../components/StatusPill.astro';
+import { site } from '../lib/site';
+
+const entries = (await getCollection('research')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const paragraphs = site.intro.split('\n\n').filter((p) => p.trim());
+---
+<Base title={`${site.name} — Information retrieval`} current="home">
+  <main class="wrap">
+    <header class="hero rise">
+      <h1>{site.name}</h1>
+      <p class="tagline">{site.tagline}</p>
+      <ul class="affil">
+        {site.affiliations.map((a) => (
+          <li>
+            <span>{a.role}</span>
+            <span class="org">{a.org}</span>
+            <span class="yr">{a.detail}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="intro">
+        {paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+    </header>
+
+    <section class="sec rise">
+      <h2>Research</h2>
+      {entries.map((e) => (
+        <div class="brief-entry">
+          <div class="t"><a href={`/research/#${e.data.slug}`}>{e.data.short}</a></div>
+          <div class="d">
+            {e.data.role} · <StatusPill status={e.data.status} shape={e.data.status_shape} />
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <section class="sec rise">
+      <h2>{site.engineering.heading}</h2>
+      <p class="lead">{site.engineering.lead}</p>
+      <ul class="eng-list">
+        {site.engineering.items.map((i) => <li>{i}</li>)}
+      </ul>
+    </section>
+
+    <Footer />
+  </main>
+</Base>

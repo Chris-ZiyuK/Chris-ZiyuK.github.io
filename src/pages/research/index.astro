@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Footer from '../../components/Footer.astro';
+import StatusPill from '../../components/StatusPill.astro';
+import { site } from '../../lib/site';
+
+const entries = (await getCollection('research')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const rendered = await Promise.all(
+  entries.map(async (e) => ({ data: e.data, Content: (await render(e)).Content })),
+);
+---
+<Base title={`Research — ${site.name}`} current="research">
+  <main class="wrap">
+    <header class="hero rise" style="padding-bottom:0">
+      <h1>Research</h1>
+      <p class="tagline">{site.tagline}</p>
+    </header>
+
+    <section class="sec">
+      {rendered.map(({ data, Content }) => (
+        <article class="entry rise" id={data.slug}>
+          <h3>{data.title}</h3>
+          <div class="meta">
+            <span class="role">{data.role}</span>
+            <span class="dot">/</span>
+            <span class="yr">{data.period}</span>
+            <StatusPill status={data.status} shape={data.status_shape} />
+          </div>
+          <div class="body"><Content /></div>
+          <div class="tags">{data.tags.map((t) => <span>{t}</span>)}</div>
+        </article>
+      ))}
+    </section>
+
+    <Footer />
+  </main>
+</Base>

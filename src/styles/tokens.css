@@ -1,0 +1,52 @@
+/* 令牌层 —— 移植自 ~/codebase/DAILY/scripts/serve.py:420-436(已调过、经色盲校验)。
+   与 DAILY 的差异只有一处:强调色换成深靛蓝,portfolio 全站单色。
+   规则见 CLAUDE.md §4:强调色只用在小元素,不做大面积色块。 */
+
+:root {
+  --plane:   #f4f4f1;
+  --surface: #fbfbf9;
+  --line:    #e5e4dd;
+  --ring:    rgba(11, 11, 11, .08);
+  --ink:     #14140f;
+  --ink2:    #54534d;
+  --muted:   #8f8e86;
+
+  --accent:     #3b3799;
+  --accent-dim: rgba(59, 55, 153, .12);
+
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  /* 行长 60–75 字符,见 CLAUDE.md §4.5 */
+  --measure: 34rem;
+  --page: 46rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme=light])) {
+    --plane:   #0e0e0c;
+    --surface: #1a1a17;
+    --line:    #2a2a26;
+    --ring:    rgba(255, 255, 255, .10);
+    --ink:     #f0efe8;
+    --ink2:    #c3c2b7;
+    --muted:   #8f8e86;
+
+    --accent:     #9d95f0;
+    --accent-dim: rgba(157, 149, 240, .16);
+  }
+}
+
+:root[data-theme=dark] {
+  --plane:   #0e0e0c;
+  --surface: #1a1a17;
+  --line:    #2a2a26;
+  --ring:    rgba(255, 255, 255, .10);
+  --ink:     #f0efe8;
+  --ink2:    #c3c2b7;
+  --muted:   #8f8e86;
+
+  --accent:     #9d95f0;
+  --accent-dim: rgba(157, 149, 240, .16);
+}

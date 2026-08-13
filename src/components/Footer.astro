@@ -1,0 +1,9 @@
+---
+import { site, isTodo } from '../lib/site';
+const { email, github } = site.links;
+---
+<footer class="foot">
+  <a href={`mailto:${email}`}>{email}</a>
+  <span>GitHub {isTodo(github) ? <span class="todo">{github}</span> : github}</span>
+  <span class="sp">Providence, RI</span>
+</footer>
