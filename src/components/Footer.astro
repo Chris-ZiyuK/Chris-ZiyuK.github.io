@@ -4,6 +4,8 @@ const { email, github } = site.links;
 ---
 <footer class="foot">
   <a href={`mailto:${email}`}>{email}</a>
-  <span>GitHub {isTodo(github) ? <span class="todo">{github}</span> : github}</span>
+  {isTodo(github)
+    ? <span class="todo">{github}</span>
+    : <a href={`https://github.com/${github}`} rel="me">github.com/{github}</a>}
   <span class="sp">Providence, RI</span>
 </footer>

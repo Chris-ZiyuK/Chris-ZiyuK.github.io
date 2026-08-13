@@ -51,14 +51,14 @@ engineering:
 
 links:
   email: chriskong1103@gmail.com
-  github: TODO:github-handle
-  scholar: TODO:scholar-url-or-remove
+  github: Chris-ZiyuK
   cv: /cv
-  cv_pdf: /Chris-Kong-CV.pdf
 
 # 明确不放的东西,写在这里防止以后手滑加回来。见 CLAUDE.md §2。
 omitted:
   - phone            # CV 上有,网页上不放
   - caig_demo        # 需先取得组里与 Baylor 同意
   - review_scores    # 审稿分数永不外露
-  - skills_bar       # PhD 申请里是负信号
+  - skills_bar       # 首页不放;CV 页保留 CV 自己的 Technical 段
+  - scholar          # 2026-08-13 用户确认没有 Google Scholar 主页,不放这一项
+  - cv_pdf           # 现有 PDF 页眉含手机号,暂不重导出 → 站上先只有 HTML 版 CV
