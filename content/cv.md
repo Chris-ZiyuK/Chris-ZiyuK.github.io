@@ -1,13 +1,15 @@
 ---
 updated: "2026-08-13"
 synced_from: "PhD Application/01-core-materials/cv/cv-academic.md"
-# PDF 尚不可发布:现有 Chris.Kong_CV.pdf 页眉含手机号(见 CLAUDE.md §2)。
-# 重新导出一份去掉手机号的,再把这里改成 /Chris-Kong-CV.pdf。
-pdf: "TODO:cv-pdf-without-phone"
-# 相对上游 CV 删掉的东西,必须在这里记明,防止以后手滑加回来。
+# 2026-08-14 决定:站上暂不放 PDF,只留 HTML 版 CV。
+# 现有那份 Chris.Kong_CV.pdf 页眉含手机号、第 2 页 REFERENCES 段含三位推荐人的
+# 办公地址与邮箱 —— 后者是别人的信息,不发。
+# 要接上时:导一份干净的放进 public/Chris-Kong-CV.pdf,再把下面这行改成 /Chris-Kong-CV.pdf。
+pdf: "TODO:clean-cv-pdf"
+# 下面记的是网页正文相对上游 CV 删掉的东西。
 omitted:
-  - "手机号 —— CLAUDE.md §2"
-  - "REFERENCES 段三位推荐人的邮箱 —— 未经本人同意不公开他人联系方式"
+  - "手机号 —— 爬虫会收"
+  - "REFERENCES 段三位推荐人的地址与邮箱 —— 未经本人同意不公开他人联系方式,正文改成 References available on request"
 ---
 
 ## Education

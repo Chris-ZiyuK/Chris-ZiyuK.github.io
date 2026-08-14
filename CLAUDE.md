@@ -30,10 +30,17 @@
 | DAILY 的 `data/projects/*.md` 正文 | 是内部工作笔记:审稿状态、已知缺陷、阻塞项。公开等于自曝 |
 | 审稿分数、meta-review 内容、rebuttal 细节 | corpus 里明确标了"不写进任何申请材料" |
 | `collect_signals.py` 那类活跃度信号 | commits_7d / days_idle / stalled 暴露工作节奏和哪些项目停了 |
-| 手机号 | CV 上有,网页上不要有。爬虫会收 |
-| 他人联系方式 | 上游 CV 的 REFERENCES 段有三位推荐人的邮箱,未经本人同意不公开 |
 | 未发表的具体结果与图表 | ColBERT 在 workshop 录用前、HOMRL 在投出前,只写方向不放数字图表 |
-| CAIG demo 链接 | **需先取得组里和 Baylor 的明确同意**,在那之前不放任何入口 |
+| CAIG demo 链接 | 2026-08-14 明确:**暂时不能公开**。不要放任何入口,也不要再问 |
+
+**CV PDF** —— 2026-08-14 决定:**站上暂不放 PDF**,`/cv` 只有 HTML 版。
+现有那份 `Chris.Kong_CV.pdf` 页眉含手机号、第 2 页 REFERENCES 含三位推荐人的办公地址与邮箱;
+后者是别人的信息,没经同意不发。要接上时:把一份干净的 PDF 放进 `public/Chris-Kong-CV.pdf`,
+再把 `content/cv.md` 的 `pdf` 字段改成 `/Chris-Kong-CV.pdf`,两步,别的不用动。
+
+**含敏感内容的文件连提交都不要做。** git 里删掉文件不等于删掉它 —— blob 仍然留在历史里,
+`git show <sha>:<path>` 就能取出来。2026-08-14 那份 PDF 就是在推送前才发现已经进了本地提交,
+靠重写未推送的历史才干净拿掉的。**先确认能不能公开,再 `git add`。**
 
 技术上:不 symlink、不 import DAILY 或 PhD Application 的任何路径。`content/` 每个文件都人手过一遍。
 
@@ -58,13 +65,19 @@
 
 ---
 
-## 4. 设计哲学(从 DAILY/CLAUDE.md 继承)
+## 4. 设计方向
 
-1. **简洁大方,有层次**:大面积留中性面(plane/surface),配色克制。**一个强调色**,只用在小元素(标题点、链接、meter、节点描边),不做大面积色块。
-2. **抽象优先,少文字**:能用图形就不用文字。全部内联 SVG(feather/lucide 描边风格),**禁止 emoji**。
-3. **状态绝不只靠颜色**:任何状态区分用形状(实心/半实/空心)+ 颜色双通道,兼顾色盲。
-4. **dual-mode**:亮/暗两套都要保证对比与层次,不是简单反色。
-5. **排版是主角**:这站的主体是文字。行长 60–75 字符、行高 1.6–1.75,比任何图形都更决定质感。
+**受众是学院派 PI 和招生委员会,不是设计评审。这个网站要像一份排版好的 CV,
+不像一个作品集。** 2026-08-14 用户定的方向,推翻了此前从 DAILY 看板继承的图形优先倾向。
+
+1. **以文字为主**。信息用句子和排版承载,不用示意图。同一天已经砍掉过一版做好的研究地图 SVG ——
+   它画得没错,但这个场合不需要。**动手加任何图示、图表、动效之前,先问它是不是在炫技。**
+   例外只有一种:图形在传达文字传达不了的信息(比如论文状态的形状标记),而不是把文字重说一遍。
+2. **排版是主角**:行长 60–75 字符、行高 1.6–1.75。质感全靠这个,不靠装饰。
+3. **简洁,有层次**:大面积留中性面(plane/surface),配色克制。**一个强调色**,
+   只用在小元素(标题点、链接、状态标记),不做大面积色块。**禁止 emoji**。
+4. **状态绝不只靠颜色**:状态区分用形状(实心/半实/空心)+ 颜色双通道,兼顾色盲。
+5. **dual-mode**:亮/暗两套都要保证对比与层次,不是简单反色。
 
 **已调好的参数,直接用,不要重挑**:
 - 令牌层来自 `~/codebase/DAILY/scripts/serve.py:420-436`
@@ -130,9 +143,9 @@ npm run check    # 只做类型与 schema 检查
 
 | 事项 | 卡在哪 |
 |---|---|
-| `TODO:github-handle`、`TODO:scholar-url-or-remove` | 需要用户给,不要编 |
-| `TODO:cv-pdf-without-phone` | 现有 `Chris.Kong_CV.pdf` 页眉含手机号,**不能直接上传**。要重新导出一份去掉手机号的 |
-| `astro.config.mjs` 的 `site` | 现在是 `https://TODO-github-handle.github.io`,部署前改成真实地址 |
-| 首页研究地图 SVG | 方案 PLAN.md §6,尚未做 |
-| CAIG demo 入口 | 需先取得组里与 Baylor 同意 |
+| 推上 GitHub、开 Pages | 用户手动:建 `Chris-ZiyuK.github.io` 仓库,Settings → Pages → Source 选 GitHub Actions |
+| 干净版 CV PDF | 想换的时候导一份不含手机号与推荐人信息的,直接覆盖 `public/Chris-Kong-CV.pdf`,别的不用动 |
 | 学位写法 | 站上统一用 Sc.M.(依 corpus 的标准 bio);上游 `cv-academic.md` 与 PDF 写的是 M.S.,同步时注意 |
+
+已经定了、**不要再提**的:Google Scholar(没有,不放)、CAIG demo(暂不能公开)、
+研究地图 SVG(已砍,理由见 §4)。
