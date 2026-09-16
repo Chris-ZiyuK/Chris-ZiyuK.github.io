@@ -130,6 +130,13 @@ a:focus-visible {
 .status .mk.half  { fill: var(--accent); }
 
 .entry .body { max-width: var(--measure); color: var(--ink2); }
+/* 出处行:经费编号 + 外部链接。放在 meta 下、正文上 —— 可核实的第三方链接
+   比页面上的任何数字都更能建立可信度。见 CLAUDE.md §6。 */
+.entry .prov {
+  margin: -2px 0 14px; font-size: 13.5px; color: var(--muted);
+  display: flex; flex-wrap: wrap; gap: 6px 14px; max-width: var(--measure);
+}
+.entry .prov a { color: var(--accent); }
 .entry .body p { margin: 0 0 .95em; }
 .entry .body p:last-child { margin-bottom: 0; }
 .entry .body strong { color: var(--ink); font-weight: 650; }

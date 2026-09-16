@@ -29,6 +29,14 @@ const rendered = await Promise.all(
             <span class="yr">{data.period}</span>
             <StatusPill status={data.status} shape={data.status_shape} />
           </div>
+          {(data.funding || Object.keys(data.links).length > 0) && (
+            <p class="prov">
+              {data.funding && <span>{data.funding}</span>}
+              {Object.entries(data.links).map(([label, href]) => (
+                <a href={href} rel="noopener">{label}</a>
+              ))}
+            </p>
+          )}
           <div class="body"><Content /></div>
           <div class="tags">{data.tags.map((t) => <span>{t}</span>)}</div>
         </article>

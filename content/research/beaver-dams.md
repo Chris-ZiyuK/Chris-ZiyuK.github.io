@@ -1,26 +1,31 @@
 ---
-title: "Investigating and Predicting Impacts of Beaver Dams at Scale"
-short: "A terabyte of remote sensing, ten thousand dams"
+title: "Remote Sensing and Machine Learning for Forecasting Beaver Dam Impacts on Watersheds"
+short: "Predicting what dam restoration does to a landscape"
 slug: beaver-dams
-role: "Junior Research Scientist, NYU Lindsay Lab (Prof. Grace W. Lindsay)"
+role: "Beaver Lab, Collaborative Earth (Lab Lead: Prof. Grace W. Lindsay, NYU)"
 period: "2024–2025"
 status: "Completed"
 status_shape: solid
 order: 4
-tags: [data engineering, remote sensing]
-links: {}
+tags: [remote sensing, geospatial ML, data engineering]
+links:
+  Beaver Lab: "http://collaborative.earth/beaver-lab"
 sources:
+  - "collaborative.earth/beaver-lab — 实验室名称、负责人、团队与目标"
   - "cv-academic.md — Junior Research Scientist, New York University"
 ---
 
-**Problem.** Measuring what beaver dams do to a landscape means assembling
-imagery and hydrology records for thousands of sites that no single database
-covers, from sources that disagree about geography, time, and format.
+Beaver Lab asks whether land stewards can forecast the effects of restoring a
+landscape with beavers, using satellite imagery and machine learning in place of
+site-by-site survey. The obstacle is upstream of the modelling: the imagery and
+hydrology records for thousands of dam sites live in separate archives that
+disagree about geography, time, and format, and no single database covers them.
 
-**What I did.** Led the data engineering and modeling. Automated retrieval and
-processing of remote sensing imagery across Google, NASA and USGS database APIs,
-and designed the ETL around it — extraction, transformation, storage, and the
-integration work needed to make those sources line up.
+I built the data side of that. Automated retrieval and processing of remote
+sensing imagery across Google, NASA and USGS APIs, and designed the pipeline
+around it — extraction, transformation, storage, and the reconciliation needed to
+make sources with different projections and revisit intervals line up on the same
+site. Over a terabyte of imagery covering more than ten thousand dams nationwide.
 
-**Scale.** Over 1 TB of data covering more than 10,000 dams nationwide, and over
-a million data points.
+The lab's deliverables are a prototype tool for analysing dam impact and a
+predictive model for how restoration affects drought and wildfire resilience.
