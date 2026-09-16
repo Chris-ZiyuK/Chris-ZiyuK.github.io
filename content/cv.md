@@ -50,12 +50,12 @@ Originated in CSCI 2951X (Reintegrating AI) · Mar 2026 – Sep 2026 \
 - Reported a methodological negative result for continual-RL probing: the forgotten task's geometry decodes at R²=0.93 against an untrained-network floor, but a network never trained on that task decodes it just as well (0.92; difference +0.003, CI [−0.042, +0.031]), so the standard probe is not diagnostic without a never-trained-on-the-task control.
 
 **Junior Research Scientist** — New York University, New York, NY \
-NYU Lindsay Lab (P.I.: Dr. Grace W. Lindsay) · Jan 2024 – Jun 2025 \
-*Investigating and Predicting Impacts of Beaver Dams at Scale*
+[Beaver Lab, Collaborative Earth](http://collaborative.earth/beaver-lab) (Lab Lead: Dr. Grace W. Lindsay, NYU) · Jan 2024 – Jun 2025, full-time from Jan 2025 \
+*Remote sensing and machine learning for forecasting the effects of beaver dam restoration on watersheds*
 
-- Led the data engineering, analysis and modeling effort.
-- Used Google, NASA and USGS database APIs to automate retrieval and processing of remote sensing imagery.
-- Designed and automated the ETL process across those APIs, handling over 1 TB of data covering more than 10,000 beaver dams nationwide and over 1 million data points.
+- Owned the data architecture for a lab whose goal is to let land stewards forecast what restoring a landscape with beavers will do, from satellite imagery rather than site-by-site survey.
+- Automated retrieval and processing of remote sensing imagery across Google, NASA and USGS APIs, and designed the pipeline that reconciles sources disagreeing on projection, revisit interval and format so they line up on the same dam site.
+- Handled over 1 TB of imagery covering more than 10,000 dams nationwide and over 1 million data points.
 
 ## Industry Experience
 

@@ -16,43 +16,36 @@ sources:
   - "cv-academic.md — First-Author Research Project (Neural Retrieval Auditing)"
 ---
 
-**Problem.** Neural retrievers score a query against a document with a learned
-similarity, and that score moves when you swap a name in the query. Aggregate
-fairness metrics tell you *that* it moved. They do not tell you *where* in the
-query the movement came from, so there is nothing concrete to fix.
+ColBERT-style late interaction scores decompose exactly, one query token at a
+time. I used that to build Token Contribution Disparity, an exact attribution of
+a counterfactual score shift — what happens when you swap a name in the query —
+back to the individual tokens that produced it. Aggregate fairness metrics tell
+you a score moved. This tells you where in the query it moved.
 
-**What I did.** ColBERT-style late interaction scores decompose exactly, one
-query token at a time. I used that to define Token Contribution Disparity — an
-exact, not approximate, attribution of a counterfactual score shift to individual
-query tokens — and ran a controlled audit of identity-induced sensitivity on top
-of it, with MaxSim argmax tracing to rule out the simpler explanations.
+The audit built on top of it found a function-word effect. Tokens carrying no
+identity content absorb more of the induced score change than content words do,
+the pattern holds under cluster bootstraps and mixed-effects models, and BM25
+shows nothing at all under the same swaps.
 
-**What happened next is the part worth reading.** After a full ACL Rolling Review
-cycle, and before sending the paper anywhere else, I audited my own
-implementation rather than only my numbers. Two defects had been sitting in code
-written months earlier, both predating submission: a model-loading path that
-silently dropped ColBERT's projection head, so the scores were never ColBERT's
-scoring function, and a string substitution without word boundaries that
-corrupted most of one control condition. I reran all 55,440 controlled tests plus
-both validation sets under corrected scoring.
+After a full ACL Rolling Review cycle, and before sending the paper anywhere
+else, I audited the implementation rather than the numbers. Two defects had been
+sitting in code written months earlier, both older than the submission: a
+model-loading path that silently dropped ColBERT's projection head, so the scores
+were never ColBERT's scoring function, and a string substitution without word
+boundaries that corrupted most of one control condition. I reran every controlled
+test and both validation sets under corrected scoring.
 
-**What survived, and what did not.** The main effect held: function words absorb
-roughly 1.4× more identity-induced score change than content words, and the three
-settings that had disagreed now converge on that figure. Gender mismatch remains
-the most stable predictor. Cross-race pairing still shows no independent
-amplification once confounds are controlled. BM25 still shows no sensitivity
-under identical swaps. But the headline claim — that identity perturbations
-exceed matched non-identity ones — did not survive: identity swaps and ordinary
-number-word swaps became indistinguishable, and both sit below nonce words. I
-retracted it.
+The function-word effect held. The headline claim did not. Identity swaps and
+ordinary number-word swaps came out indistinguishable, and both sat below
+nonsense words, so the claim that identity perturbations exceed matched
+non-identity ones is no longer in the paper.
 
-**Where it is going.** The paper is being rebuilt around what the corrected data
-actually supports, which I think is the more useful claim anyway: token-level
-counterfactual attribution cannot separate social bias from general perturbation
-sensitivity, and aggregate score-sensitivity metrics are scale-dependent and not
-comparable across architectures — adding a projection head to the same encoder on
-the same data moves the aggregate from 0.037 to 0.115 while the token-level ratio
-barely moves at all. It is a paper about measurement validity now.
+What the corrected data supports is narrower. Token-level counterfactual
+attribution cannot separate social bias from general perturbation sensitivity.
+And the aggregate form of the metric is scale-dependent: adding a projection head
+to the same encoder on the same data moves the aggregate several-fold while the
+token-level ratio barely moves at all, which makes comparing architectures on it
+unsound. The paper is being rebuilt around those two claims.
 
-**Origin.** Started as a project in Brown's CSCI 2952W (Critical AI and Data
-Studies), with guidance from the course instructor.
+Started as a project in Brown's CSCI 2952W (Critical AI and Data Studies), with
+guidance from the course instructor.
