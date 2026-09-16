@@ -16,8 +16,11 @@ const research = defineCollection({
     // 状态措辞红线在类型层面锁死:只有审过的表述能通过构建。
     // 想加新状态,必须先回 CLAUDE.md §3 确认措辞,再加到这个联合里。
     status: z.enum([
-      'Under review at ACL Rolling Review (May 2026 cycle)',
-      'Manuscript in preparation, 2026',
+      // 2026-09-16: ARR 那轮已结束、BlackboxNLP 已拒，旧的 'Under review at ACL
+      // Rolling Review (May 2026 cycle)' 与 'Manuscript in preparation, 2026'
+      // 一并移除 —— 留在枚举里就会有人再用回去。见 CLAUDE.md §3。
+      'Under review at the TTCL workshop, NeurIPS 2026 (non-archival)',
+      'Manuscript in revision',
       'Ongoing',
       'Completed',
     ]),

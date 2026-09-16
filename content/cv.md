@@ -1,5 +1,5 @@
 ---
-updated: "2026-08-13"
+updated: "2026-09-16"
 synced_from: "PhD Application/01-core-materials/cv/cv-academic.md"
 # 2026-08-14 决定:站上暂不放 PDF,只留 HTML 版 CV。
 # 现有那份 Chris.Kong_CV.pdf 页眉含手机号、第 2 页 REFERENCES 段含三位推荐人的
@@ -26,26 +26,28 @@ B.A. in Computer and Data Science (GPA 3.94/4.0) · Sep 2021 – Dec 2024
 BATS Machine Learning Research Group (P.I.: Dr. Stephen Bach) · Jan 2026 – present \
 *CAIG: Navigating the Climate Science Deluge — Training Language Models to Assist in Comprehensive Assessments*
 
-- Research on information retrieval for scientific literature: document preprocessing, encoding, and retrieval pipeline design for climate-science question answering.
-- Develop and evaluate ColBERT-based retrieval pipelines over large-scale corpora of climate research papers.
-- Rebuilt PDF/OCR preprocessing for research-paper ingestion, increasing average extracted line length by ~50% and reducing noisy line fragmentation by 30–40%, giving cleaner text to downstream indexing and retrieval.
-- Investigate how reranking and RAG pipeline design affect retrieval quality, answer fidelity, and system efficiency in literature-grounded QA.
+- Built a graded evaluation benchmark for scientific literature retrieval where no gold relevance labels exist, deriving 10,625 relevance judgments over 683 queries from the citation structure of the IPCC AR6 WGI report itself (claim → DOI → document → grade) rather than from manual annotation.
+- Showed that reranking is the wrong place to spend effort in this domain: only 7.95% of ground-truth documents reach the top-100 candidate pool, and a recall sweep to k=1000 found 43% of queries retrieve no cited work at k=100, falling to 24% at k=500 with negligible gain beyond.
+- Ran a three-scale study (8B/14B/32B) of LLM reranking against trained cross-encoders over 383 answerable queries: sliding-window reranking redistributes rather than improves (harm to shallow queries d=−0.278, p<0.0001, stable across three sample sizes), and a cross-encoder with 73× fewer parameters discriminates deep candidates better than any LLM tested.
+- Found and quantified a silent failure mode contaminating earlier results, where a reranker fallback path returned retrieval order unmarked and was being scored as a genuine reranking.
+- Rebuilt PDF/OCR preprocessing for research-paper ingestion, increasing average extracted line length by ~50% and reducing noisy line fragmentation by 30–40%.
 
 **First-Author Research Project** (Neural Retrieval Auditing) — Brown University \
-Originated in CSCI 2952W (Critical AI and Data Studies); developed into an ARR submission · Mar 2026 – present \
-*Where Does Bias Hide in Neural Retrieval? Token-Level Attribution of Identity-Induced Score Sensitivity in Late-Interaction Models*
+Originated in CSCI 2952W (Critical AI and Data Studies) · Mar 2026 – present \
+*Token-Level Attribution of Identity-Induced Score Sensitivity in Late-Interaction Retrieval*
 
-- Proposed Token Contribution Disparity (TCD), an exact token-level decomposition of counterfactual score shifts in late-interaction retrieval, attributing identity-induced bias to individual query tokens.
-- Ran 55,440 controlled counterfactual tests with naturalistic-template and MS MARCO validations; function words absorb 1.43×–2.08× more identity-induced score change than content words, robust under cluster bootstraps and mixed-effects models; BM25 shows no sensitivity under identical swaps.
-- Under review at ACL Rolling Review (May 2026 cycle).
+- Proposed Token Contribution Disparity (TCD), an exact token-level decomposition of counterfactual score shifts in late-interaction retrieval, attributing an identity-induced score change to individual query tokens.
+- Ran 55,440 controlled counterfactual tests with naturalistic-template and MS MARCO validations; function words absorb ~1.4× more identity-induced score change than content words, robust under cluster bootstraps and mixed-effects models, while BM25 shows no sensitivity under identical swaps.
+- After a full ACL Rolling Review cycle, audited my own implementation rather than only my numbers, found two defects that predated submission, and reran every test under corrected scoring. The main effect held; the headline claim that identity perturbations exceed matched non-identity ones did not, and I retracted it.
+- Rebuilding the paper around measurement validity: token-level counterfactual attribution cannot separate social bias from general perturbation sensitivity, and aggregate score-sensitivity metrics are scale-dependent and not comparable across architectures.
 
 **First-Author Research Project** (Continual Reinforcement Learning) — Brown University \
-Originated in CSCI 2951X (Reintegrating AI); developed into a manuscript · Mar 2026 – May 2026 \
-*HACE: Addressing Viability Failure in Sequential Reinforcement Learning with Homeostatic Auxiliary Rewards*
+Originated in CSCI 2951X (Reintegrating AI) · Mar 2026 – Sep 2026 \
+*What to Want, Not Where to Go: Localizing What a Homeostatic Prior Protects Across a Task Switch*
 
-- Identified and formalized viability failure in sequential RL: agents managing a shared energy resource can die at task boundaries before learning new tasks, a failure mode not addressed by standard continual-RL methods.
-- Proposed HACE, a task-invariant homeostatic auxiliary reward based on drive reduction; evaluated against EWC, experience replay, L2, and task-only baselines on a 10-task sequential benchmark (9 agent variants, 10 seeds).
-- HACE variants reached roughly 3× higher task-boundary solvability and retained 3–5× more energy at task transitions; combining HACE with EWC improved both viability and retention.
+- Tested the standing claim that anchoring value on internal physiological state yields continual learning without forgetting, and found it does not: homeostatic shaping is indistinguishable from an unshaped learner and from experience replay on final survival, and shows the most negative backward transfer — it forgets most because it learns each task best.
+- Localized what the prior does protect with a directional probe: across a task switch the valuation code is fully retained while the spatial code is not.
+- Reported a methodological negative result for continual-RL probing: the forgotten task's geometry decodes at R²=0.93 against an untrained-network floor, but a network never trained on that task decodes it just as well (0.92; difference +0.003, CI [−0.042, +0.031]), so the standard probe is not diagnostic without a never-trained-on-the-task control.
 
 **Junior Research Scientist** — New York University, New York, NY \
 NYU Lindsay Lab (P.I.: Dr. Grace W. Lindsay) · Jan 2024 – Jun 2025 \
@@ -71,8 +73,8 @@ NYU Lindsay Lab (P.I.: Dr. Grace W. Lindsay) · Jan 2024 – Jun 2025 \
 
 ## Manuscripts
 
-- **Ziyu Kong**. "Where Does Bias Hide in Neural Retrieval? Token-Level Attribution of Identity-Induced Score Sensitivity in Late-Interaction Models." Under review, ACL Rolling Review (May 2026 cycle).
-- **Ziyu Kong**, Shihang Gui, Ruth Ukubay, and Meiyi Song. "HACE: Addressing Viability Failure in Sequential Reinforcement Learning with Homeostatic Auxiliary Rewards." Manuscript in preparation, 2026.
+- **Ziyu Kong** and [co-author]. "What to Want, Not Where to Go: Localizing What a Homeostatic Prior Protects Across a Task Switch." Under review, TTCL Workshop (Towards Test-Time Continual Learning Agents), NeurIPS 2026. Non-archival.
+- **Ziyu Kong**. "Token-Level Attribution of Identity-Induced Score Sensitivity in Late-Interaction Retrieval." Manuscript in revision.
 
 ## Awards
 
