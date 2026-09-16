@@ -11,13 +11,20 @@ tagline: >-
 # 首页自我介绍。风格红线:句子不过分工整、少抽象名词、保留个人语气。
 intro: |
   I work on how retrieval systems decide what counts as a good answer, and on
-  whether we can tell when they get it wrong.
+  whether the measurements we check them with are measuring anything.
 
   At Brown I build and evaluate retrieval pipelines for climate science
-  literature in Stephen Bach's group — where the hard part is evaluation, since
-  nobody hands you relevance labels for a corpus of research papers. Separately,
-  I audit where identity-related bias enters late-interaction retrieval scores,
-  down to individual query tokens.
+  literature in Stephen Bach's group. The hard part is evaluation. Nobody hands
+  you relevance labels for a corpus of research papers, so we derived them from
+  the citation structure of the IPCC assessment reports instead — and then found
+  that retrieval reaches under 8% of the evidence those reports cite, which put
+  the problem somewhere I had not expected to find it.
+
+  Separately I work on late-interaction retrieval scores at the token level. That
+  one began as a bias audit and turned into something else once I audited my own
+  implementation rather than my numbers: what the metric detects is sensitivity
+  to perturbation, not bias in particular. I kept the negative result and rebuilt
+  the paper around it.
 
   Before graduate school I built agent systems in industry. That is where these
   questions first showed up: the retrieval and memory layer, not the model,
