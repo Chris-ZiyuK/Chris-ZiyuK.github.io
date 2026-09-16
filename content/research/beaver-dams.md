@@ -2,7 +2,7 @@
 title: "Remote Sensing and Machine Learning for Forecasting Beaver Dam Impacts on Watersheds"
 short: "Predicting what dam restoration does to a landscape"
 slug: beaver-dams
-role: "Beaver Lab, Collaborative Earth (Lab Lead: Prof. Grace W. Lindsay, NYU)"
+role: "Junior Research Scientist, New York University · lab member, Beaver Lab (Collaborative Earth)"
 period: "2024–2025"
 status: "Completed"
 status_shape: solid

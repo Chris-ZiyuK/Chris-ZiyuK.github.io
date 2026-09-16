@@ -17,34 +17,25 @@ sources:
   - "corpus/bats-lab.md — 研究问题与结果(数字不上公开页面)"
 ---
 
-*This project is ongoing and unpublished. What follows describes the questions and
-the direction of the results, not final findings — the numbers behind them are
-still moving, and several are under revision.*
+*Ongoing and unpublished. What follows describes the questions and the direction
+of the results, not final findings.*
 
 A climate scientist writing an assessment report needs to know which papers are
-worth reading, and which of them demonstrate a claim rather than mention it.
-Standard IR benchmarks are little help. There are no relevance judgments for a
-corpus of peer-reviewed climate literature, and the unit that matters to the user
-is the paper, not the passage.
+worth reading, and which of them demonstrate a claim rather than mention it. No
+relevance judgments exist for a corpus of peer-reviewed climate literature, and
+the unit that matters is the paper, not the passage. My part of the project is
+evaluation. Rather than commission annotators, we treat the IPCC reports as a
+labelled dataset in their own right: each claim points at the papers supporting
+it, so the citation structure yields graded judgments directly. Whether to count
+a paper cited in the same chapter, on the same topic, but not evidence for the
+specific claim, is the decision that silently defines what "evidence" means
+downstream.
 
-My part of the project is evaluation. Rather than commission annotators, we treat
-the IPCC assessment reports as a labelled dataset in their own right: every claim
-in a report points at the papers supporting it, so the citation structure yields
-graded judgments directly. One decision inside that does most of the work. A
-paper can be cited in the same chapter, on the same topic, and still not be
-evidence for the specific claim being checked, and whether you count it silently
-defines what "evidence" means for everything downstream.
-
-With a benchmark in place, the question I have spent this year on is where the
-loss actually happens. Only a small fraction of the cited evidence reaches the
-candidate pool at all, which means the reranking stage most of the field works on
-is competing over what retrieval already failed to find. A separate study
-comparing LLM rerankers against trained cross-encoders across three model scales
-points the same way: sliding-window reranking moves score between shallow and
-deep queries rather than adding any, and a far smaller trained cross-encoder
-separates deep candidates better than any of the language models tested.
-
-I also own the infrastructure this runs on: ColBERT retrieval pipelines with
-incremental indexing, a composable reranker and fusion layer, and an evaluation
-harness that reconciles per-query results against the aggregates and complains
-when they disagree. It runs on a SLURM GPU cluster.
+What the benchmark showed is that the loss happens earlier than the field
+assumes. Only a small fraction of cited evidence reaches the candidate pool at
+all, so the reranking stage most work targets is competing over what retrieval
+already missed. A separate comparison of LLM rerankers against trained
+cross-encoders at three model scales agrees: sliding-window reranking moves score
+between shallow and deep queries rather than adding any. The infrastructure is
+mine too, from the ColBERT pipelines and the fusion layer to the evaluation
+harness that runs them on a SLURM cluster.

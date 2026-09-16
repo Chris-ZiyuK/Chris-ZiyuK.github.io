@@ -50,7 +50,7 @@ Originated in CSCI 2951X (Reintegrating AI) · Mar 2026 – Sep 2026 \
 - Reported a methodological negative result for continual-RL probing: the forgotten task's geometry decodes at R²=0.93 against an untrained-network floor, but a network never trained on that task decodes it just as well (0.92; difference +0.003, CI [−0.042, +0.031]), so the standard probe is not diagnostic without a never-trained-on-the-task control.
 
 **Junior Research Scientist** — New York University, New York, NY \
-[Beaver Lab, Collaborative Earth](http://collaborative.earth/beaver-lab) (Lab Lead: Dr. Grace W. Lindsay, NYU) · Jan 2024 – Jun 2025, full-time from Jan 2025 \
+Lab member, [Beaver Lab](http://collaborative.earth/beaver-lab), Collaborative Earth (Lab Lead: Dr. Grace W. Lindsay) · Jan 2024 – Jun 2025, full-time from Jan 2025 \
 *Remote sensing and machine learning for forecasting the effects of beaver dam restoration on watersheds*
 
 - Owned the data architecture for a lab whose goal is to let land stewards forecast what restoring a landscape with beavers will do, from satellite imagery rather than site-by-site survey.

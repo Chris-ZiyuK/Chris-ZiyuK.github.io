@@ -17,35 +17,24 @@ sources:
 ---
 
 Brain-inspired RL keeps returning to the idea that an agent should anchor value
-on its own internal state rather than on external, task-specific reward: a food
-cue is worth more to a hungry animal than to a sated one. A hypothesis usually
-rides along with it. Because internal state stays meaningful when the world
-rearranges, the prior ought to deliver continual learning without forgetting. I
-put the prior into a learning agent and asked what it actually protects when the
-task changes underneath it.
+on its internal state rather than on task-specific reward: a food cue is worth
+more to a hungry animal than to a sated one. The hypothesis riding along with it
+is that because internal state stays meaningful when the world rearranges, the
+prior should deliver continual learning without forgetting. It does not. The
+homeostatic learner is indistinguishable from an unshaped one on final survival
+and shows the most negative backward transfer of anything tested, forgetting most
+because it learns each task best. A directional probe locates what the prior does
+protect: across a task switch the valuation code, which resource to pursue given
+the current deficit, is retained in full, while the spatial code, where that
+resource is, is not.
 
-It does not protect against forgetting. In an online continual setting the
-homeostatic learner is indistinguishable from an unshaped one, and from
-experience replay, on final survival, and it shows the most negative backward
-transfer of anything tested. It forgets most because it learns each task best,
-which also drains the meaning from the near-zero forgetting of the other
-baselines: those conditions never learned in the first place.
-
-A directional probe locates what the prior does protect. Across a task switch the
-valuation code, which resource to pursue given the current deficit, is retained
-in full. The spatial code, where that resource is, is not. The prior protects the
-computation it parameterizes and leaves locating the target in space alone.
-
-One result here is about the method rather than about the agent, and I think it
-generalizes past this testbed. The obvious representational test, asking whether the old code is still in the
-weights by running a linear probe against an untrained-network floor, is not
-diagnostic here. The forgotten layout decodes far above that floor, but it
-decodes just as well out of a network trained only on the new layout, which has
-never seen the old one. Agent position is part of the observation, so any
-competent navigator linearly encodes distance to every cell, and the probe cannot
-distinguish a retained code from a generic one. Continual-RL probing needs a
-never-trained-on-this-task control, not only an untrained-network floor. That
-control contradicted a claim in an earlier draft of this paper.
+The result I think travels past this testbed is about method. Probing whether the
+old code survives in the weights, against an untrained-network floor, is not
+diagnostic: the forgotten layout decodes well above that floor, but so it does
+out of a network that has never seen it, since agent position is in the
+observation and any competent navigator encodes distance to every cell.
+Continual-RL probing needs a never-trained-on-this-task control, and running one
+contradicted a claim in an earlier draft of this paper.
 
 Started as a project in George Konidaris's CSCI 2951X (Reintegrating AI) at
 Brown, and rewritten from that draft into the paper now under review.
