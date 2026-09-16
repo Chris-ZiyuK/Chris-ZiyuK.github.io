@@ -18,13 +18,13 @@
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
 
-  /* 行长 60–75 字符,见 CLAUDE.md §4.5。
-     2026-09-16 放宽:原来 34rem/46rem 在 1600px+ 的显示器上只占屏宽不到四成,
-     正文块偏左浮着、右侧一大片空。现在 37rem 配 17px 约 72 字符/行,仍在区间内;
-     39rem 实测会到 80 字符,超出上限，故回收。容器 --page 放宽更多，
-     靠“容器宽 + 字号大”而不是“行更长”来填大屏。 */
-  --measure: 37rem;
-  --page: 56rem;
+  /* 2026-09-16 第二版。原先 --measure 34rem / --page 46rem，正文比容器窄近 300px，
+     右侧空出一条槽 —— 身份行的年份、导航都排到容器右缘，正文却提前断掉，
+     看上去像排版出错。现在让正文宽度几乎齐容器内宽，上下对齐。
+     行长上限经本人 2026-09-16 明确放宽：不再守 60–75，现约 85 字符/行，
+     同时把大屏正文提到 18px 来抵消长行带来的回行负担。见 CLAUDE.md §4.5。 */
+  --measure: 47rem;
+  --page: 52rem;
 }
 
 @media (prefers-color-scheme: dark) {

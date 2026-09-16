@@ -229,9 +229,9 @@ a:focus-visible {
   * { animation: none !important; transition: none !important; }
 }
 
-/* 大屏上稍微放大正文。配 39rem 的 measure 约 72 字符/行。 */
+/* 大屏上放大正文。配 47rem 的 measure 约 85 字符/行。 */
 @media (min-width: 1200px) {
-  body { font-size: 17px; }
+  body { font-size: 18px; }
 }
 
 @media (max-width: 640px) {
