@@ -4,10 +4,10 @@ short: "What a brain-derived prior actually buys an RL agent"
 slug: homeostatic-prior
 role: First author
 period: "2026"
-# 状态措辞红线见 CLAUDE.md §3。必须写明 workshop + non-archival,不可让人读成 NeurIPS 主会。
-# 9/25 通知后若录用,改为 to appear;若未录用,改回 Manuscript in revision。
-status: "Under review at the TTCL workshop, NeurIPS 2026 (non-archival)"
-status_shape: half
+# 状态措辞红线见 CLAUDE.md §3。2026-09-28 更正:TTCL 9/25 未录用,现在没有 venue 在审。
+# 不可写 under review / accepted。投 TMLR(计划 10/12)或挂 arXiv 后再改这一行。
+status: "Manuscript in revision"
+status_shape: hollow
 order: 3
 tags: [reinforcement learning, continual learning, evaluation]
 links: {}
@@ -37,4 +37,4 @@ Continual-RL probing needs a never-trained-on-this-task control, and running one
 contradicted a claim in an earlier draft of this paper.
 
 Started as a project in George Konidaris's CSCI 2951X (Reintegrating AI) at
-Brown, and rewritten from that draft into the paper now under review.
+Brown, and rewritten from that draft into a paper now in revision.

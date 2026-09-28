@@ -1,5 +1,5 @@
 ---
-updated: "2026-09-16"
+updated: "2026-09-28"
 synced_from: "PhD Application/01-core-materials/cv/cv-academic.md"
 # 2026-08-14 决定:站上暂不放 PDF,只留 HTML 版 CV。
 # 现有那份 Chris.Kong_CV.pdf 页眉含手机号、第 2 页 REFERENCES 段含三位推荐人的
@@ -73,7 +73,7 @@ Lab member, [Beaver Lab](http://collaborative.earth/beaver-lab), Collaborative E
 
 ## Manuscripts
 
-- **Ziyu Kong** and [co-author]. "What to Want, Not Where to Go: Localizing What a Homeostatic Prior Protects Across a Task Switch." Under review, TTCL Workshop (Towards Test-Time Continual Learning Agents), NeurIPS 2026. Non-archival.
+- **Ziyu Kong** and [co-author]. "What to Want, Not Where to Go: Localizing What a Homeostatic Prior Protects Across a Task Switch." Manuscript in revision.
 - **Ziyu Kong**. "Token-Level Attribution of Identity-Induced Score Sensitivity in Late-Interaction Retrieval." Manuscript in revision.
 
 ## Awards

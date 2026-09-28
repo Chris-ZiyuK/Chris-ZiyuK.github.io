@@ -19,7 +19,8 @@ const research = defineCollection({
       // 2026-09-16: ARR 那轮已结束、BlackboxNLP 已拒，旧的 'Under review at ACL
       // Rolling Review (May 2026 cycle)' 与 'Manuscript in preparation, 2026'
       // 一并移除 —— 留在枚举里就会有人再用回去。见 CLAUDE.md §3。
-      'Under review at the TTCL workshop, NeurIPS 2026 (non-archival)',
+      // 2026-09-28: TTCL 9/25 未录用,'Under review at the TTCL workshop, NeurIPS
+      // 2026 (non-archival)' 同理移除。投 TMLR 后再按 §3 加新措辞。
       'Manuscript in revision',
       'Ongoing',
       'Completed',
