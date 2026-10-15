@@ -25,7 +25,7 @@ I built the data side of that. Automated retrieval and processing of remote
 sensing imagery across Google, NASA and USGS APIs, and designed the pipeline
 around it — extraction, transformation, storage, and the reconciliation needed to
 make sources with different projections and revisit intervals line up on the same
-site. Over a terabyte of imagery covering more than ten thousand dams nationwide.
+site.
 
 The lab's deliverables are a prototype tool for analysing dam impact and a
 predictive model for how restoration affects drought and wildfire resilience.
