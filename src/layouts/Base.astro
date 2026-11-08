@@ -24,7 +24,7 @@ const nav = [
   <meta property="og:type" content="website" />
   <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 </head>
-<body>
+<body data-page={current}>
   <nav class="topnav">
     <div class="wrap">
       <a class="home" href="/">{site.name}</a>

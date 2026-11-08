@@ -14,31 +14,44 @@ const paragraphs = site.intro.split('\n\n').filter((p) => p.trim());
 ---
 <Base title={`${site.name} — Information retrieval`} current="home">
   <main class="wrap">
-    <header class="hero rise">
-      <h1>{site.name}</h1>
-      <p class="tagline">{site.tagline}</p>
-      <ul class="affil">
-        {site.affiliations.map((a) => (
-          <li>
-            <span>{a.role}</span>
-            <span class="org">{a.org}</span>
-            <span class="yr">{a.detail}</span>
-          </li>
-        ))}
-      </ul>
-      <div class="intro">
-        {paragraphs.map((p) => <p>{p}</p>)}
+    <header class="hero profile">
+      <div class="profile-main">
+        <p class="eyebrow">{site.profile_kicker}</p>
+        <h1>{site.name}</h1>
+        <p class="tagline">{site.tagline}</p>
+        <div class="intro">
+          {paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+        <div class="profile-links">
+          <a href={`mailto:${site.links.email}`}>Email <span aria-hidden="true">↗</span></a>
+          <a href={`https://github.com/${site.links.github}`} rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="/cv/">Curriculum vitae <span aria-hidden="true">→</span></a>
+        </div>
       </div>
+      <aside class="profile-background" aria-label={site.background_heading}>
+        <h2>{site.background_heading}</h2>
+        <ul class="affil">
+          {site.affiliations.map((a) => (
+            <li>
+              <span class="yr">{a.detail}</span>
+              <span class="affil-role">{a.role}</span>
+              <span class="org">{a.org}</span>
+            </li>
+          ))}
+        </ul>
+      </aside>
     </header>
 
-    <section class="sec showcase rise" aria-labelledby="selected-research">
+    <section class="sec showcase" aria-labelledby="selected-research">
       <div class="section-heading">
-        <h2 id="selected-research">Selected research</h2>
-        <a href="/research/">All research <span aria-hidden="true">→</span></a>
+        <div>
+          <h2 id="selected-research">{site.research_heading}</h2>
+          <p>{site.research_intro}</p>
+        </div>
+        <a href="/research/">Explore the research <span aria-hidden="true">→</span></a>
       </div>
       {entries.map((e) => (
         <article class="showcase-entry">
-          <ResearchFigure figure={e.data.figure} compact />
           <div class="showcase-copy">
             <p class="research-label">{e.data.label}</p>
             <h3><a href={`/research/#${e.data.slug}`}>{e.data.short}</a></h3>
@@ -47,16 +60,19 @@ const paragraphs = site.intro.split('\n\n').filter((p) => p.trim());
               <span>{e.data.period}</span>
             </div>
             <p class="takeaway">{e.data.takeaway}</p>
-            <p class="contribution"><strong>My contribution.</strong> {e.data.contribution}</p>
+            <p class="contribution">{e.data.contribution}</p>
             <ResearchLinks links={e.data.links} details={`/research/#${e.data.slug}`} />
           </div>
+          <ResearchFigure figure={e.data.figure} compact />
         </article>
       ))}
     </section>
 
-    <section class="sec rise">
-      <h2>{site.engineering.heading}</h2>
-      <p class="lead">{site.engineering.lead}</p>
+    <section class="sec engineering">
+      <div>
+        <h2>{site.engineering.heading}</h2>
+        <p class="lead">{site.engineering.lead}</p>
+      </div>
       <ul class="eng-list">
         {site.engineering.items.map((i) => <li>{i}</li>)}
       </ul>

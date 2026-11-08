@@ -1,13 +1,13 @@
 ---
 title: "Exact but Not Specific: A Measurement-Validity Analysis of Token-Level Name-Swap Audits in Late-Interaction Retrieval"
 label: "ColBERT · Retrieval auditing"
-short: "Exact attribution does not establish identity specificity"
+short: "Exact but not specific"
 slug: colbert-tcd
 role: First author
 period: "2026–"
 status: "Manuscript in revision"
 status_shape: hollow
-order: 1
+order: 4
 tags: [information retrieval, evaluation, measurement validity, fairness]
 takeaway: "Non-identity substitutions reproduce the token-sensitivity pattern seen under name swaps, challenging its interpretation as identity-specific."
 contribution: "I developed the token-level attribution analysis and tested its interpretation with non-identity controls."

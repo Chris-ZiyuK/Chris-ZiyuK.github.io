@@ -5,6 +5,10 @@ import yaml from 'js-yaml';
 export type Affiliation = { role: string; org: string; detail: string };
 export type Site = {
   name: string;
+  profile_kicker: string;
+  background_heading: string;
+  research_heading: string;
+  research_intro: string;
   tagline: string;
   intro: string;
   affiliations: Affiliation[];

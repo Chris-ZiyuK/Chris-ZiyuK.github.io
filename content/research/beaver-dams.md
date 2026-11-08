@@ -1,13 +1,13 @@
 ---
 title: "Beaver Lab: Remote Sensing for Beaver Restoration"
-label: "Beaver Lab · NYU / Collaborative Earth"
-short: "From satellite imagery to a tool for studying dam impacts"
+label: "NYU / Collaborative Earth · Beaver Lab"
+short: "Measuring beaver dam impacts"
 slug: beaver-dams
 role: "Junior Research Scientist, New York University · lab member, Beaver Lab (Collaborative Earth)"
 period: "2024–2025"
 status: "Completed"
 status_shape: solid
-order: 3
+order: 2
 tags: [remote sensing, geospatial ML, data engineering]
 takeaway: "Beaver Lab's interactive tool compares satellite-derived environmental measures at dam and no-dam locations."
 contribution: "I built remote-sensing data pipelines, aligning imagery and environmental records across sites and time."

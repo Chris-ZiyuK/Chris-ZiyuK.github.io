@@ -2,13 +2,13 @@
 title: "What Survives a Layout Shift? Diagnosing Retention in Continual Navigation"
 label: "Continual reinforcement learning"
 authors: "Junhe Chen*, Ziyu Kong* · Equal contribution"
-short: "A high probe score is not enough to establish memory"
+short: "Retention under layout shifts"
 slug: homeostatic-prior
 role: Co-first author
 period: "2026"
 status: "Manuscript in revision"
 status_shape: hollow
-order: 2
+order: 3
 tags: [reinforcement learning, continual learning, evaluation]
 takeaway: "A network that never learned the old layout can decode its geometry almost as well as one that did."
 contribution: "As co-first author, I investigate retention with negative controls, behavioral tests, and budgeted recovery."

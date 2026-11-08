@@ -1,13 +1,13 @@
 ---
 title: "CAIG: Navigating the Climate Science Deluge — Training Language Models to Assist in Comprehensive Assessments"
 label: "CAIG · Brown University"
-short: "Retrieval evaluation for climate assessment literature"
+short: "Retrieval for climate science"
 slug: caig
 role: "Research Assistant, BATS Machine Learning Group (PI: Prof. Stephen Bach)"
 period: "2026–"
 status: "Ongoing"
 status_shape: solid
-order: 4
+order: 1
 tags: [information retrieval, RAG, evaluation, AI for science]
 funding: "NSF Award #2425380 · Brown University · 2024–2027"
 takeaway: "IPCC claims, report sections, and citations provide an evidence structure for evaluating climate-literature retrieval."

@@ -2,6 +2,10 @@
 # TODO: 开头的值是显式占位符,构建时会报警。不要猜,不要编。
 
 name: Chris Ziyu Kong
+profile_kicker: "Computer science · Brown University"
+background_heading: "Appointments & education"
+research_heading: "Selected research"
+research_intro: "Retrieval, learning, and scientific applications."
 
 # 申请主线定位句。来源:corpus/bio-and-narrative.md「一句话定位」
 tagline: >-

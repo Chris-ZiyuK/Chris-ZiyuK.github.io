@@ -16,29 +16,40 @@ const rendered = await Promise.all(
 ---
 <Base title={`Research — ${site.name}`} current="research">
   <main class="wrap">
-    <header class="hero rise" style="padding-bottom:0">
+    <header class="hero page-heading">
+      <p class="eyebrow">{site.research_intro}</p>
       <h1>Research</h1>
       <p class="tagline">{site.tagline}</p>
     </header>
 
+    <nav class="research-index" aria-label="Research projects">
+      {entries.map((e) => <a href={`#${e.data.slug}`}>{e.data.short}</a>)}
+    </nav>
+
     <section class="sec">
       {rendered.map(({ data, Content }) => (
-        <article class="entry rise" id={data.slug}>
-          <h2>{data.title}</h2>
-          {data.authors && <p class="authors">{data.authors}</p>}
-          <div class="meta">
-            <span class="role">{data.role}</span>
-            <span class="dot">/</span>
-            <span class="yr">{data.period}</span>
-            <StatusPill status={data.status} shape={data.status_shape} />
+        <article class="entry" id={data.slug}>
+          <div class="entry-heading">
+            <p class="research-label">{data.label}</p>
+            <h2>{data.title}</h2>
+            {data.authors && <p class="authors">{data.authors}</p>}
+            <div class="meta">
+              <span class="role">{data.role}</span>
+              <span class="yr">{data.period}</span>
+              <StatusPill status={data.status} shape={data.status_shape} />
+            </div>
+            {data.funding && <p class="prov">{data.funding}</p>}
           </div>
-          {data.funding && <p class="prov">{data.funding}</p>}
-          <p class="research-takeaway">{data.takeaway}</p>
-          <ResearchLinks links={data.links} />
-          <ResearchFigure figure={data.figure} />
-          <div class="body"><Content /></div>
+          <div class="entry-grid">
+            <div class="entry-narrative">
+              <p class="research-takeaway">{data.takeaway}</p>
+              <ResearchLinks links={data.links} />
+              <div class="body"><Content /></div>
+            </div>
+            <ResearchFigure figure={data.figure} />
+          </div>
           {data.secondaryFigure && <ResearchFigure figure={data.secondaryFigure} />}
-          <div class="tags">{data.tags.map((t) => <span>{t}</span>)}</div>
+          <div class="tags" aria-label="Research topics">{data.tags.map((t) => <span>{t}</span>)}</div>
         </article>
       ))}
     </section>
