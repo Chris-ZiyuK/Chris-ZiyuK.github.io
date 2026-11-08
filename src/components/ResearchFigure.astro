@@ -5,13 +5,14 @@ interface Figure {
   caption: string;
   sourceLabel: string;
   sourceUrl?: string;
+  aspectRatio?: number;
 }
 interface Props { figure: Figure; compact?: boolean }
 const { figure, compact = false } = Astro.props;
 ---
 <figure class:list={['research-figure', { compact }]}>
   <a class="figure-image" href={figure.src} target="_blank" rel="noopener" aria-label={`View full-size figure: ${figure.alt}`}>
-    <img src={figure.src} alt={figure.alt} loading="lazy" decoding="async" />
+    <img src={figure.src} alt={figure.alt} loading="lazy" decoding="async" style={figure.aspectRatio ? `aspect-ratio: ${figure.aspectRatio}; object-fit: contain` : undefined} />
   </a>
   <figcaption>
     {!compact && <span class="figure-caption">{figure.caption}</span>}

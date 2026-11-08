@@ -7,6 +7,8 @@ const figure = z.object({
   caption: z.string().min(1),
   sourceLabel: z.string(),
   sourceUrl: z.string().url().optional(),
+  wide: z.boolean().default(false),
+  aspectRatio: z.number().positive().optional(),
 });
 
 // 内容住在 content/,与 src/ 平级 —— 真相源和渲染层分开。

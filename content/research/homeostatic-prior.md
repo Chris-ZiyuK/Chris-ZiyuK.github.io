@@ -16,14 +16,17 @@ tags: [reinforcement learning, continual learning, evaluation]
 takeaway: "A network that never learned the old layout can decode its geometry almost as well as one that did."
 contribution: "As co-first author, I investigate retention with negative controls, behavioral tests, and budgeted recovery."
 figure:
-  src: /images/research/rl-probe-control.svg
-  alt: "Old-layout geometry decoding for agents trained on both layouts, agents trained only on the new layout, and untrained networks."
-  caption: "Layout-A decoding in the homeostatic-reward condition. A network that never learned A still decodes its geometry. Dots show individual seeds; bars show the quasi-trimmed mean and 95% bootstrap intervals. High probe scores alone do not establish retained task-specific memory."
-  sourceLabel: "Adapted from manuscript · Figure 2(a)"
+  src: /images/research/rl-method.svg
+  wide: true
+  aspectRatio: 3.4185815
+  alt: "Two resource layouts and the diagnostic controls used to distinguish need-sensitive action, decodable geometry, and behavioral retention."
+  caption: "Resource locations change while survival needs stay fixed. Each retention claim is tested separately: need-sensitive action against a deficit-blind null, decodable old geometry against a never-exposed control, and behavioral retention through old-task survival and budgeted recovery. Layout information varies across studies."
+  sourceLabel: "From manuscript · Figure 1"
 links: {}
 sources:
   - "User update, 2026-11-08 — graduate capstone; workshop submission under review"
   - "Research manuscript: What Survives a Layout Shift? — Figure 2(a), representation-probe controls, and evaluation checks"
+  - "Research manuscript: What Survives a Layout Shift? — Figure 1, experiment and diagnostic-control overview"
   - "Research manuscript author list — Junhe Chen and Ziyu Kong, equal contribution"
 ---
 

@@ -1,5 +1,17 @@
 Research showcase figures — 2026-11-08
 
+rl-method.svg
+Figure 1 of "What Survives a Layout Shift? Diagnosing Retention in Continual Navigation" (research manuscript, Junhe Chen and Ziyu Kong, equal contribution).
+Converted from the manuscript's new_evidence/overview.pdf to SVG without changing its panels, labels, colors, or layout. Original PDF SHA256: be92987cd1e31867f60937fa93183efa265a628c7ff4509b94c1136c9a8494e4.
+The diagram presents changing resource layouts and the separate diagnostic controls for action sensitivity, decodable geometry, and behavioral retention. It is an evaluation overview, not a new anti-forgetting algorithm.
+
+colbert-method.svg
+New method schematic based on section 3 of "Exact but Not Specific: A Measurement-Validity Analysis of Token-Level Name-Swap Audits in Late-Interaction Retrieval" (research manuscript, Ziyu Kong).
+Shows matched document perturbations, the checkpoint-projection and L2-normalized MaxSim scoring path, signed token attribution, and non-identity specificity controls. The exact score decomposition includes all query positions, including special tokens. Token matches are schematic, with no measured scores or result ratios.
+This is an adaptation of the current manuscript's methods, not an original numbered paper figure. The older overview figure's result ratios are not reused.
+
+Earlier result illustrations (retained for existing direct links; no longer used in project showcases):
+
 colbert-controls.svg
 Selected conditions redrawn from Figure 1(a) of "Exact but Not Specific: A Measurement-Validity Analysis of Token-Level Name-Swap Audits in Late-Interaction Retrieval" (research manuscript, Ziyu Kong).
 Uses corrected-scoring estimates and both test-level and swap-pair cluster-bootstrap 95% intervals. Each displayed condition has 280 tests and five swap pairs; the numeral condition uses modified templates. This is a selected control panel, not evidence of equivalence.
@@ -7,6 +19,8 @@ Uses corrected-scoring estimates and both test-level and swap-pair cluster-boots
 rl-probe-control.svg
 Redrawn from Figure 2(a) of "What Survives a Layout Shift? Diagnosing Retention in Continual Navigation" (research manuscript, Junhe Chen and Ziyu Kong, equal contribution).
 Layout-A linear decoding, homeostatic-reward condition. All 37 seed observations, original quasi-trimmed means, and 95% percentile-bootstrap intervals are retained. Episode counts are matched; interactions and updates are not.
+
+Other current project illustrations:
 
 beaver-map.png and beaver-indices.png
 Unmodified example images from Collaborative Earth's Beaver Impacts Tool introduction:

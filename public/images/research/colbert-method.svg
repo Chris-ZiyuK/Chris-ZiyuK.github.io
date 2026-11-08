@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="500" viewBox="0 0 1280 500" role="img" aria-labelledby="title desc">
+  <title id="title">Token-level retrieval audit: from a controlled edit to a test of its interpretation</title>
+  <desc id="desc">A method schematic, without measured values. Hold the query and document context fixed while replacing the target name or word. Encode the query and documents with the checkpoint projection and L2 normalization, then obtain each query token's best document match with MaxSim. Subtract the matched contributions to obtain signed token contribution disparities; summing over all query positions, including special tokens, recovers the score difference. Repeat the same audit for identity names, numerals, and nonsense words to test whether a token-level signature is specific to identity.</desc>
+  <defs>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #26383e; }
+      .step { font-size: 15px; font-weight: 700; fill: #2e6672; letter-spacing: 1px; }
+      .heading { font-size: 22px; font-weight: 700; }
+      .body { font-size: 17px; }
+      .small { font-size: 15px; fill: #5f6d73; }
+      .label { font-size: 17px; font-weight: 700; }
+      .math { font-family: Georgia, 'Times New Roman', serif; font-size: 21px; }
+      .panel { fill: #fbfcfc; stroke: #d9e3e5; stroke-width: 1.4; }
+      .token { fill: #edf4f5; stroke: #ccdcdf; stroke-width: 1.2; }
+      .target { fill: #fff0e3; stroke: #ca7737; stroke-width: 1.5; }
+      .flow { fill: none; stroke: #497482; stroke-width: 2; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1 L7 4 L1 7" fill="none" stroke="#497482" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="500" fill="#fff"/>
+  <text x="26" y="31" font-size="18" font-weight="700" fill="#2e6672">TOKEN-LEVEL RETRIEVAL AUDIT</text>
+  <text x="1252" y="31" text-anchor="end" class="small">Method schematic</text>
+
+  <rect class="panel" x="24" y="56" width="280" height="374" rx="8"/>
+  <rect class="panel" x="330" y="56" width="280" height="374" rx="8"/>
+  <rect class="panel" x="636" y="56" width="280" height="374" rx="8"/>
+  <rect class="panel" x="942" y="56" width="314" height="374" rx="8"/>
+
+  <text x="43" y="85" class="step">01 · CONTROLLED EDIT</text>
+  <text x="43" y="116" class="heading">Matched documents</text>
+  <text x="43" y="150" class="body">Fixed query Q</text>
+  <rect class="token" x="43" y="162" width="46" height="33" rx="4"/>
+  <rect class="token" x="98" y="162" width="46" height="33" rx="4"/>
+  <rect class="token" x="153" y="162" width="46" height="33" rx="4"/>
+  <text x="66" y="184" text-anchor="middle" class="body">q₁</text>
+  <text x="121" y="184" text-anchor="middle" class="body">q₂</text>
+  <text x="176" y="184" text-anchor="middle" class="body">…</text>
+
+  <text x="43" y="241" class="label">D<tspan baseline-shift="sub" font-size="0.75em">A</tspan></text>
+  <rect class="target" x="78" y="219" width="90" height="36" rx="4"/>
+  <text x="123" y="243" text-anchor="middle" class="label">Name A</text>
+  <path d="M181 229 H278 M181 243 H260" stroke="#a9b9be" stroke-width="4" stroke-linecap="round"/>
+  <text x="43" y="302" class="label">D<tspan baseline-shift="sub" font-size="0.75em">B</tspan></text>
+  <rect class="target" x="78" y="280" width="90" height="36" rx="4"/>
+  <text x="123" y="304" text-anchor="middle" class="label">Name B</text>
+  <path d="M181 290 H278 M181 304 H260" stroke="#a9b9be" stroke-width="4" stroke-linecap="round"/>
+  <path d="M123 259 V275" stroke="#ca7737" stroke-width="1.5"/>
+  <text x="228" y="337" text-anchor="middle" class="small">same context</text>
+  <text x="43" y="378" class="body">Replace the target text;</text>
+  <text x="43" y="402" class="body">hold its context fixed.</text>
+
+  <path class="flow" d="M309 245 H325"/>
+
+  <text x="349" y="85" class="step">02 · LATE INTERACTION</text>
+  <text x="349" y="116" class="heading">Token matching</text>
+  <text x="470" y="146" text-anchor="middle" class="small">Encoder → checkpoint projection</text>
+  <text x="470" y="168" text-anchor="middle" class="small">→ L2 normalization</text>
+  <text x="441" y="200" text-anchor="middle" class="small">d₁</text>
+  <text x="487" y="200" text-anchor="middle" class="small">d₂</text>
+  <text x="533" y="200" text-anchor="middle" class="small">d₃</text>
+  <text x="386" y="230" class="body">q₁</text>
+  <text x="386" y="266" class="body">q₂</text>
+  <text x="386" y="302" class="body">q₃</text>
+  <g stroke="#cadbdd" stroke-width="1">
+    <rect x="422" y="210" width="38" height="28" fill="#edf4f5"/>
+    <rect x="468" y="210" width="38" height="28" fill="#3f7b86"/>
+    <rect x="514" y="210" width="38" height="28" fill="#edf4f5"/>
+    <rect x="422" y="246" width="38" height="28" fill="#3f7b86"/>
+    <rect x="468" y="246" width="38" height="28" fill="#edf4f5"/>
+    <rect x="514" y="246" width="38" height="28" fill="#edf4f5"/>
+    <rect x="422" y="282" width="38" height="28" fill="#edf4f5"/>
+    <rect x="468" y="282" width="38" height="28" fill="#edf4f5"/>
+    <rect x="514" y="282" width="38" height="28" fill="#3f7b86"/>
+  </g>
+  <path d="M480 224 l5 5 9-11 M434 260 l5 5 9-11 M526 296 l5 5 9-11" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="470" y="337" text-anchor="middle" class="small">Best match per query token</text>
+  <text x="470" y="376" text-anchor="middle" class="math">cᵢ(D) = maxⱼ qᵢᵀdⱼ</text>
+  <text x="470" y="403" text-anchor="middle" class="small">Compute for D<tspan baseline-shift="sub" font-size="0.75em">A</tspan> and D<tspan baseline-shift="sub" font-size="0.75em">B</tspan></text>
+
+  <path class="flow" d="M615 245 H631"/>
+
+  <text x="655" y="85" class="step">03 · EXACT DECOMPOSITION</text>
+  <text x="655" y="116" class="heading">Signed attribution</text>
+  <text x="776" y="153" text-anchor="middle" class="math">TCDᵢ = cᵢ(D<tspan baseline-shift="sub" font-size="0.75em">A</tspan>) − cᵢ(D<tspan baseline-shift="sub" font-size="0.75em">B</tspan>)</text>
+  <g>
+    <rect class="token" x="668" y="178" width="63" height="34" rx="4"/>
+    <rect class="token" x="741" y="178" width="63" height="34" rx="4"/>
+    <rect class="token" x="814" y="178" width="63" height="34" rx="4"/>
+    <text x="699" y="201" text-anchor="middle" class="small">c₁(D<tspan baseline-shift="sub" font-size="0.75em">A</tspan>)</text>
+    <text x="772" y="201" text-anchor="middle" class="small">c₂(D<tspan baseline-shift="sub" font-size="0.75em">A</tspan>)</text>
+    <text x="845" y="201" text-anchor="middle" class="body">…</text>
+    <text x="772" y="235" text-anchor="middle" font-size="25" fill="#497482">−</text>
+    <rect class="token" x="668" y="246" width="63" height="34" rx="4"/>
+    <rect class="token" x="741" y="246" width="63" height="34" rx="4"/>
+    <rect class="token" x="814" y="246" width="63" height="34" rx="4"/>
+    <text x="699" y="269" text-anchor="middle" class="small">c₁(D<tspan baseline-shift="sub" font-size="0.75em">B</tspan>)</text>
+    <text x="772" y="269" text-anchor="middle" class="small">c₂(D<tspan baseline-shift="sub" font-size="0.75em">B</tspan>)</text>
+    <text x="845" y="269" text-anchor="middle" class="body">…</text>
+  </g>
+  <path class="flow" d="M772 289 V310"/>
+  <text x="776" y="343" text-anchor="middle" class="math" style="font-size:25px">ΔS = Σᵢ TCDᵢ</text>
+  <text x="776" y="381" text-anchor="middle" class="small">Sum over all query positions,</text>
+  <text x="776" y="404" text-anchor="middle" class="small">including special tokens.</text>
+
+  <path class="flow" d="M921 245 H937"/>
+
+  <text x="961" y="85" class="step">04 · SPECIFICITY CONTROLS</text>
+  <text x="961" y="116" class="heading">Test the interpretation</text>
+  <text x="961" y="149" class="body">Repeat the same audit for:</text>
+  <rect x="961" y="169" width="276" height="56" rx="5" fill="#edf4f5" stroke="#ccdcdf"/>
+  <text x="979" y="192" class="label">Identity names</text>
+  <text x="979" y="213" class="small">Name A → Name B</text>
+  <rect x="961" y="237" width="276" height="56" rx="5" fill="#fff" stroke="#ccdcdf"/>
+  <text x="979" y="260" class="label">Numerals</text>
+  <text x="979" y="281" class="small">ten → fifteen</text>
+  <rect x="961" y="305" width="276" height="56" rx="5" fill="#fff" stroke="#ccdcdf"/>
+  <text x="979" y="328" class="label">Nonsense words</text>
+  <text x="979" y="349" class="small">name → invented string</text>
+  <text x="1099" y="393" text-anchor="middle" class="small">Compare token-level signatures.</text>
+
+  <text x="640" y="470" text-anchor="middle" font-size="21" fill="#2e6672">Exact attribution locates score changes; controls test what those changes mean.</text>
+</svg>

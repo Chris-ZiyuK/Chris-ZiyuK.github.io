@@ -42,13 +42,14 @@ const rendered = await Promise.all(
             </div>
             {data.funding && <p class="prov">{data.funding}</p>}
           </div>
-          <div class="entry-grid">
+          <div class:list={['entry-grid', { 'wide-figure': data.figure.wide }]}>
+            {data.figure.wide && <ResearchFigure figure={data.figure} />}
             <div class="entry-narrative">
               <p class="research-takeaway">{data.takeaway}</p>
               <ResearchLinks links={data.links} exclude={data.highlights.flatMap(h => h.href ? [h.href] : [])} />
               <div class="body"><Content /></div>
             </div>
-            <ResearchFigure figure={data.figure} />
+            {!data.figure.wide && <ResearchFigure figure={data.figure} />}
           </div>
           {data.secondaryFigure && <ResearchFigure figure={data.secondaryFigure} />}
           <div class="tags" aria-label="Research topics">{data.tags.map((t) => <span>{t}</span>)}</div>
