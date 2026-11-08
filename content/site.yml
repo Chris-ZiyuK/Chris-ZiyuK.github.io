@@ -5,17 +5,18 @@ name: Chris Ziyu Kong
 background_heading: "Appointments & education"
 research_heading: "Selected research"
 
-# 申请主线定位句。来源:corpus/bio-and-narrative.md「一句话定位」
+# 搜索与分享摘要。与用户 2026-11-08 提供的 SoP 研究愿景保持一致。
 tagline: >-
-  Research in information retrieval, learning-system evaluation, and scientific applications.
+  Interpretable information retrieval: mechanisms, evaluation, and tools for knowledge discovery.
 
 # 首页自我介绍。风格红线:句子不过分工整、少抽象名词、保留个人语气。
 intro: |
-  I study retrieval and learning systems, with a focus on whether evaluation
-  results reflect the capabilities we want to measure. At Brown, I work in
-  Stephen Bach's group on climate-science literature retrieval, building
-  pipelines and evaluations that connect assessment claims to the underlying
-  research literature.
+  I want to help people turn abundant data into knowledge they can understand
+  and use. My research focuses on information retrieval: how systems identify
+  relevant evidence, what drives their rankings, and how to evaluate their
+  behavior beyond aggregate performance scores. I aim to advance the foundations
+  of interpretable retrieval while building tools that researchers, policymakers,
+  and the public can use to investigate questions and make informed decisions.
 
 affiliations:
   - role: Sc.M. in Computer Science
