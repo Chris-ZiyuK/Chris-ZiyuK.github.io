@@ -5,8 +5,10 @@ short: "Exact but not specific"
 slug: colbert-tcd
 role: First author
 period: "2026–"
-status: "Manuscript in revision"
+status: "In revision"
 status_shape: hollow
+status_highlight: true
+highlights: []
 order: 4
 tags: [information retrieval, evaluation, measurement validity, fairness]
 takeaway: "Non-identity substitutions reproduce the token-sensitivity pattern seen under name swaps, challenging its interpretation as identity-specific."
@@ -18,6 +20,7 @@ figure:
   sourceLabel: "Adapted from manuscript · Figure 1(a)"
 links: {}
 sources:
+  - "User update, 2026-11-08 — highlight manuscript status; revision wording retained"
   - "Research manuscript: Exact but Not Specific — Figure 1(a), perturbation panel, and measurement-validity analysis"
   - "cv-academic.md — First-Author Research Project (Neural Retrieval Auditing)"
 ---

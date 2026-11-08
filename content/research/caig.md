@@ -7,6 +7,10 @@ role: "Research Assistant, BATS Machine Learning Group (PI: Prof. Stephen Bach)"
 period: "2026–"
 status: "Ongoing"
 status_shape: solid
+status_highlight: false
+highlights:
+  - label: NSF-funded
+    href: "https://www.nsf.gov/awardsearch/show-award?AWD_ID=2425380"
 order: 1
 tags: [information retrieval, RAG, evaluation, AI for science]
 funding: "NSF Award #2425380 · Brown University · 2024–2027"
@@ -20,6 +24,7 @@ figure:
 links:
   NSF award: "https://www.nsf.gov/awardsearch/show-award?AWD_ID=2425380"
 sources:
+  - "User update, 2026-11-08 — highlight the project's NSF funding"
   - "NSF Award Search #2425380 — official title, PI, and project dates"
   - "corpus/bats-lab.md — retrieval pipelines and citation-based evaluation methodology"
 ---

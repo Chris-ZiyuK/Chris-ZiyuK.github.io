@@ -2,25 +2,20 @@
 # TODO: 开头的值是显式占位符,构建时会报警。不要猜,不要编。
 
 name: Chris Ziyu Kong
-profile_kicker: "Computer science · Brown University"
 background_heading: "Appointments & education"
 research_heading: "Selected research"
-research_intro: "Retrieval, learning, and scientific applications."
 
 # 申请主线定位句。来源:corpus/bio-and-narrative.md「一句话定位」
 tagline: >-
-  Information retrieval and retrieval-augmented intelligent systems, with an
-  emphasis on reliable knowledge access, evaluation, and scientific applications.
+  Research in information retrieval, learning-system evaluation, and scientific applications.
 
 # 首页自我介绍。风格红线:句子不过分工整、少抽象名词、保留个人语气。
 intro: |
-  I study retrieval and learning systems, with a focus on whether our evaluations
-  measure the capabilities we care about. At Brown, I work on climate science
-  literature retrieval in Stephen Bach's group.
-
-  My research spans token-level retrieval audits, retention in continual
-  reinforcement learning, and satellite-data pipelines for ecological research.
-  Across these projects, I build systems and test what their results let us claim.
+  I study retrieval and learning systems, with a focus on whether evaluation
+  results reflect the capabilities we want to measure. At Brown, I work in
+  Stephen Bach's group on climate-science literature retrieval, building
+  pipelines and evaluations that connect assessment claims to the underlying
+  research literature.
 
 affiliations:
   - role: Sc.M. in Computer Science
@@ -40,9 +35,6 @@ affiliations:
 # 「研究问题的另一端有真实系统在跑」,不是技能罗列。
 engineering:
   heading: Systems I have shipped
-  lead: >-
-    The research questions above are not abstract to me — I have had to answer
-    scaled-down versions of them in production.
   items:
     - "Built an end-to-end conversational agent for prediction markets: retrieval
        over a curated internal knowledge base, tool calling, A/B testing, CI/CD."

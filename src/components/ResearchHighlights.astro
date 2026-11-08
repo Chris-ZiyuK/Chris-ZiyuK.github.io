@@ -1,0 +1,18 @@
+---
+import StatusPill from './StatusPill.astro';
+
+interface Props {
+  highlights: { label: string; href?: string }[];
+  status?: string;
+  shape: 'solid' | 'half' | 'hollow';
+}
+const { highlights, status, shape } = Astro.props;
+---
+<div class="project-highlights">
+  {highlights.map(({ label, href }) => href ? (
+    <a class="project-tag linked" href={href} rel="noopener">
+      {label}<span aria-hidden="true"> ↗</span>
+    </a>
+  ) : <span class="project-tag">{label}</span>)}
+  {status && <span class="project-tag review"><StatusPill status={status} shape={shape} /></span>}
+</div>

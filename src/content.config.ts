@@ -20,6 +20,11 @@ const research = defineCollection({
     short: z.string(),
     takeaway: z.string(),
     contribution: z.string(),
+    highlights: z.array(z.object({
+      label: z.string().min(1),
+      href: z.string().url().optional(),
+    })).default([]),
+    status_highlight: z.boolean().default(false),
     figure,
     secondaryFigure: figure.optional(),
     slug: z.string(),
@@ -29,12 +34,11 @@ const research = defineCollection({
     // 状态措辞红线在类型层面锁死:只有审过的表述能通过构建。
     // 想加新状态,必须先回 CLAUDE.md §3 确认措辞,再加到这个联合里。
     status: z.enum([
-      // 2026-09-16: ARR 那轮已结束、BlackboxNLP 已拒，旧的 'Under review at ACL
-      // Rolling Review (May 2026 cycle)' 与 'Manuscript in preparation, 2026'
-      // 一并移除 —— 留在枚举里就会有人再用回去。见 CLAUDE.md §3。
-      // 2026-09-28: TTCL 9/25 未录用,'Under review at the TTCL workshop, NeurIPS
-      // 2026 (non-archival)' 同理移除。投 TMLR 后再按 §3 加新措辞。
-      'Manuscript in revision',
+      // 2026-11-08: 用户更新 Beaver 为在投、RL 为 workshop 在审。
+      // 未指定投稿 venue；ColBERT 保留修稿状态，不推断录用或新的投稿。
+      'Under review',
+      'Workshop under review',
+      'In revision',
       'Ongoing',
       'Completed',
     ]),

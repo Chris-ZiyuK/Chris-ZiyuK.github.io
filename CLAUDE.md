@@ -5,6 +5,12 @@
 
 ## 当前展示约定（2026-11-08）
 
+最新状态与展示更新：CAIG 标注 NSF-funded；Beaver 标注可点击的 Demo、News，
+稿件状态为 Under review；RL 标注 Graduate capstone 与 Workshop under review；
+ColBERT 保留 In revision。以上来自用户本轮明确更新，取代旧状态；没有指定新的
+投稿 venue，不推断任何录用。标签放在标题旁，重复的资源链接不再另列。
+首页开头只保留一段研究介绍，不再叠加同义定位句、眉题和泛泛的分区描述。
+
 最新反馈：项目顺序固定为 CAIG → NYU / Beaver Lab → RL → ColBERT，首页和 Research
 页保持一致。当前轮次重新设计整体排版；图片先保留，后续优先考虑解释机制、完整流程
 或算法设计的论文图，不继续以结果对比图作为默认选图方向。版式采用更宽的阅读网格、
@@ -13,8 +19,8 @@
 用户已明确要求以关键图、研究发现、demo 与报道更新主页。以下约定取代下文旧的
 纯文字设计和「未发表结果一律不展示」限制，仅适用于本次选定内容：
 
-- ColBERT 与 RL 展示已核对的最新稿结果图，保留不确定性与方法边界；状态仍是
-  `Manuscript in revision`，不据此声称已发表、已录用或已公开 arXiv。
+- ColBERT 与 RL 展示已核对的最新稿结果图，保留不确定性与方法边界；状态使用
+  上方最新用户更新，不据此声称已发表、已录用或已公开 arXiv。
 - Beaver 使用官方工具介绍页的现成地图与结果示例，注明来源；突出 demo 与
   NYU CDS 报道，区分个人的数据管道贡献和实验室工具。
 - CAIG 使用方法示意，明确引用派生标签并不完整；不发布 CAIG demo。
@@ -67,16 +73,16 @@
 
 ## 3. 状态措辞红线(学术诚信,最高优先级)
 
-来自 `corpus/colbert-audit.md` 和 `corpus/rl-robotics.md`,逐字照搬:
+以 2026-11-08 用户更新为当前状态，旧 corpus 的投稿状态不覆盖这次更新：
 
 **ColBERT / TCD**
-- 可写:`under review at ACL Rolling Review (May 2026 cycle)`、`targeting EMNLP 2026`、`first-author`
+- 可写:`In revision`、`first-author`；不沿用已过期的具体投稿轮次
 - 不可写:accepted / EMNLP paper / forthcoming;结果出来前不称 "EMNLP 2026 论文"
 - 不用 "sole-authored / single-author" 自我标榜,作者栏自然呈现即可
 
 **HACE / HOMRL**
-- 可写:`completed course report (CSCI 2951X)`、`manuscript in preparation, 2026`
-- 不可写:arXiv preprint / submitted / under review / NeurIPS submission
+- 可写:`Graduate capstone`、`Workshop under review`、课程起源 `CSCI 2951X`
+- 不可写:arXiv preprint / accepted；不推断具体 workshop 或主会名称
 - 不可写 "improves continual RL performance by 300%" —— 3× 只针对 boundary solvability 一个指标
 - Konidaris 可写"课程起源",**不可**称 advisor 或列为作者
 

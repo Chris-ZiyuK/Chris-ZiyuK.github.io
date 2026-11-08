@@ -48,7 +48,7 @@ Originated in CSCI 2951X (Reintegrating AI) · Mar 2026 – Sep 2026 \
 
 - Evaluated retention after resource locations change in a continual-navigation gridworld, comparing learned representations, old-task performance, and recovery under a fixed interaction budget.
 - Added a never-exposed control to representation probing: layout-A geometry decodes at R²=0.93 after A→B training and 0.92 after B-only training in the homeostatic-reward condition. High decodability alone therefore does not establish retained task-specific memory.
-- Paired negative controls with behavioral and recovery tests to distinguish diagnostic scores from the capabilities they are intended to measure. Evidence is limited to small deterministic grids; manuscript in revision.
+- Paired negative controls with behavioral and recovery tests to distinguish diagnostic scores from the capabilities they are intended to measure. Evidence is limited to small deterministic grids; manuscript under review at a workshop.
 
 **Junior Research Scientist** — New York University, New York, NY \
 Lab member, [Beaver Lab](http://collaborative.earth/beaver-lab), Collaborative Earth (Lab Lead: Dr. Grace W. Lindsay) · Jan 2024 – Jun 2025, full-time from Jan 2025 \
@@ -74,7 +74,7 @@ Lab member, [Beaver Lab](http://collaborative.earth/beaver-lab), Collaborative E
 
 ## Manuscripts
 
-- Junhe Chen\*, **Ziyu Kong**\*. "What Survives a Layout Shift? Diagnosing Retention in Continual Navigation." Manuscript in revision. \*Equal contribution.
+- Junhe Chen\*, **Ziyu Kong**\*. "What Survives a Layout Shift? Diagnosing Retention in Continual Navigation." Under review at a workshop. \*Equal contribution.
 - **Ziyu Kong**. "Exact but Not Specific: A Measurement-Validity Analysis of Token-Level Name-Swap Audits in Late-Interaction Retrieval." Manuscript in revision.
 
 ## Awards

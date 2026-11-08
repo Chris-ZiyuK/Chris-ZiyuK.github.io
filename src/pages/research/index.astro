@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import StatusPill from '../../components/StatusPill.astro';
 import ResearchFigure from '../../components/ResearchFigure.astro';
 import ResearchLinks from '../../components/ResearchLinks.astro';
+import ResearchHighlights from '../../components/ResearchHighlights.astro';
 import { site } from '../../lib/site';
 
 const entries = (await getCollection('research')).sort(
@@ -17,9 +18,7 @@ const rendered = await Promise.all(
 <Base title={`Research — ${site.name}`} current="research">
   <main class="wrap">
     <header class="hero page-heading">
-      <p class="eyebrow">{site.research_intro}</p>
       <h1>Research</h1>
-      <p class="tagline">{site.tagline}</p>
     </header>
 
     <nav class="research-index" aria-label="Research projects">
@@ -31,19 +30,22 @@ const rendered = await Promise.all(
         <article class="entry" id={data.slug}>
           <div class="entry-heading">
             <p class="research-label">{data.label}</p>
-            <h2>{data.title}</h2>
+            <div class="project-title">
+              <h2>{data.title}</h2>
+              <ResearchHighlights highlights={data.highlights} status={data.status_highlight ? data.status : undefined} shape={data.status_shape} />
+            </div>
             {data.authors && <p class="authors">{data.authors}</p>}
             <div class="meta">
               <span class="role">{data.role}</span>
               <span class="yr">{data.period}</span>
-              <StatusPill status={data.status} shape={data.status_shape} />
+              {!data.status_highlight && <StatusPill status={data.status} shape={data.status_shape} />}
             </div>
             {data.funding && <p class="prov">{data.funding}</p>}
           </div>
           <div class="entry-grid">
             <div class="entry-narrative">
               <p class="research-takeaway">{data.takeaway}</p>
-              <ResearchLinks links={data.links} />
+              <ResearchLinks links={data.links} exclude={data.highlights.flatMap(h => h.href ? [h.href] : [])} />
               <div class="body"><Content /></div>
             </div>
             <ResearchFigure figure={data.figure} />

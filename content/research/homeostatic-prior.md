@@ -6,8 +6,11 @@ short: "Retention under layout shifts"
 slug: homeostatic-prior
 role: Co-first author
 period: "2026"
-status: "Manuscript in revision"
-status_shape: hollow
+status: "Workshop under review"
+status_shape: half
+status_highlight: true
+highlights:
+  - label: Graduate capstone
 order: 3
 tags: [reinforcement learning, continual learning, evaluation]
 takeaway: "A network that never learned the old layout can decode its geometry almost as well as one that did."
@@ -19,6 +22,7 @@ figure:
   sourceLabel: "Adapted from manuscript · Figure 2(a)"
 links: {}
 sources:
+  - "User update, 2026-11-08 — graduate capstone; workshop submission under review"
   - "Research manuscript: What Survives a Layout Shift? — Figure 2(a), representation-probe controls, and evaluation checks"
   - "Research manuscript author list — Junhe Chen and Ziyu Kong, equal contribution"
 ---
@@ -37,5 +41,5 @@ is meant to measure.
 
 The resulting evaluation checks pair negative controls with acquisition, old-task
 performance, and budgeted recovery. The empirical evidence is limited to small
-deterministic grids. This work grew from George Konidaris's CSCI 2951X
-(Reintegrating AI) at Brown; the manuscript is in revision.
+deterministic grids. This graduate capstone grew from George Konidaris's
+CSCI 2951X (Reintegrating AI) at Brown. The manuscript is under review at a workshop.

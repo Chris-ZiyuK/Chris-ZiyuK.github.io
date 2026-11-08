@@ -5,8 +5,14 @@ short: "Measuring beaver dam impacts"
 slug: beaver-dams
 role: "Junior Research Scientist, New York University · lab member, Beaver Lab (Collaborative Earth)"
 period: "2024–2025"
-status: "Completed"
-status_shape: solid
+status: "Under review"
+status_shape: half
+status_highlight: true
+highlights:
+  - label: Demo
+    href: "https://dam-impact-analysis.streamlit.app/"
+  - label: News
+    href: "https://nyudatascience.medium.com/independent-research-course-student-contributes-to-large-national-study-of-beaver-dams-6886d0fe7553"
 order: 2
 tags: [remote sensing, geospatial ML, data engineering]
 takeaway: "Beaver Lab's interactive tool compares satellite-derived environmental measures at dam and no-dam locations."
@@ -28,6 +34,7 @@ links:
   Project: "https://www.collaborative.earth/beaver-impacts-tool"
   NYU CDS feature: "https://nyudatascience.medium.com/independent-research-course-student-contributes-to-large-national-study-of-beaver-dams-6886d0fe7553"
 sources:
+  - "User update, 2026-11-08 — manuscript under review; highlight demo and news coverage"
   - "https://www.collaborative.earth/beaver-impacts-tool — tool capabilities and example images"
   - "https://www.collaborative.earth/beaver-lab — lab aims and team membership"
   - "NYU Center for Data Science, November 20, 2024 — Landsat processing contribution and project coverage"
@@ -47,4 +54,4 @@ for Data Science featured my work on the project's Landsat processing pipeline.
 The tool is a collaborative lab output. Its public examples show how the data can
 support comparisons of vegetation, water, temperature, and evapotranspiration over
 time. Forecasting restoration outcomes remains part of the lab's broader research
-agenda.
+agenda. A manuscript from the project is under review.
