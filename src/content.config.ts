@@ -1,6 +1,14 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+const figure = z.object({
+  src: z.string().startsWith('/images/research/'),
+  alt: z.string().min(1),
+  caption: z.string().min(1),
+  sourceLabel: z.string(),
+  sourceUrl: z.string().url().optional(),
+});
+
 // 内容住在 content/,与 src/ 平级 —— 真相源和渲染层分开。
 // schema 是选 Astro 的主要理由:frontmatter 少字段、拼错、状态词写成没批准的值,
 // 构建当场失败而不是静默出错。见 CLAUDE.md §3、§6。
@@ -8,7 +16,12 @@ const research = defineCollection({
   loader: glob({ pattern: '*.md', base: './content/research' }),
   schema: z.object({
     title: z.string(),
+    label: z.string(),
     short: z.string(),
+    takeaway: z.string(),
+    contribution: z.string(),
+    figure,
+    secondaryFigure: figure.optional(),
     slug: z.string(),
     role: z.string(),
     period: z.string(),

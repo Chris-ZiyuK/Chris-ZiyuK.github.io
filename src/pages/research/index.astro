@@ -3,6 +3,8 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Footer from '../../components/Footer.astro';
 import StatusPill from '../../components/StatusPill.astro';
+import ResearchFigure from '../../components/ResearchFigure.astro';
+import ResearchLinks from '../../components/ResearchLinks.astro';
 import { site } from '../../lib/site';
 
 const entries = (await getCollection('research')).sort(
@@ -22,22 +24,20 @@ const rendered = await Promise.all(
     <section class="sec">
       {rendered.map(({ data, Content }) => (
         <article class="entry rise" id={data.slug}>
-          <h3>{data.title}</h3>
+          <h2>{data.title}</h2>
+          {data.authors && <p class="authors">{data.authors}</p>}
           <div class="meta">
             <span class="role">{data.role}</span>
             <span class="dot">/</span>
             <span class="yr">{data.period}</span>
             <StatusPill status={data.status} shape={data.status_shape} />
           </div>
-          {(data.funding || Object.keys(data.links).length > 0) && (
-            <p class="prov">
-              {data.funding && <span>{data.funding}</span>}
-              {Object.entries(data.links).map(([label, href]) => (
-                <a href={href} rel="noopener">{label}</a>
-              ))}
-            </p>
-          )}
+          {data.funding && <p class="prov">{data.funding}</p>}
+          <p class="research-takeaway">{data.takeaway}</p>
+          <ResearchLinks links={data.links} />
+          <ResearchFigure figure={data.figure} />
           <div class="body"><Content /></div>
+          {data.secondaryFigure && <ResearchFigure figure={data.secondaryFigure} />}
           <div class="tags">{data.tags.map((t) => <span>{t}</span>)}</div>
         </article>
       ))}

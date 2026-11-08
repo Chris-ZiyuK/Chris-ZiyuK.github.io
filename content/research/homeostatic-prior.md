@@ -1,40 +1,41 @@
 ---
-title: "What to Want, Not Where to Go: Localizing What a Homeostatic Prior Protects Across a Task Switch"
-short: "What a brain-derived prior actually buys an RL agent"
+title: "What Survives a Layout Shift? Diagnosing Retention in Continual Navigation"
+label: "Continual reinforcement learning"
+authors: "Junhe Chen*, Ziyu Kong* · Equal contribution"
+short: "A high probe score is not enough to establish memory"
 slug: homeostatic-prior
-role: First author
+role: Co-first author
 period: "2026"
-# 状态措辞红线见 CLAUDE.md §3。2026-09-28 更正:TTCL 9/25 未录用,现在没有 venue 在审。
-# 不可写 under review / accepted。投 TMLR(计划 10/12)或挂 arXiv 后再改这一行。
 status: "Manuscript in revision"
 status_shape: hollow
-order: 3
+order: 2
 tags: [reinforcement learning, continual learning, evaluation]
+takeaway: "A network that never learned the old layout can decode its geometry almost as well as one that did."
+contribution: "As co-first author, I investigate retention with negative controls, behavioral tests, and budgeted recovery."
+figure:
+  src: /images/research/rl-probe-control.svg
+  alt: "Old-layout geometry decoding for agents trained on both layouts, agents trained only on the new layout, and untrained networks."
+  caption: "Layout-A decoding in the homeostatic-reward condition. A network that never learned A still decodes its geometry. Dots show individual seeds; bars show the quasi-trimmed mean and 95% bootstrap intervals. High probe scores alone do not establish retained task-specific memory."
+  sourceLabel: "Adapted from manuscript · Figure 2(a)"
 links: {}
 sources:
-  - "corpus/rl-robotics.md — 在投论文的四条主张 + 状态措辞红线"
-  - "cv-academic.md — First-Author Research Project (Continual Reinforcement Learning)"
+  - "Research manuscript: What Survives a Layout Shift? — Figure 2(a), representation-probe controls, and evaluation checks"
+  - "Research manuscript author list — Junhe Chen and Ziyu Kong, equal contribution"
 ---
 
-Brain-inspired RL keeps returning to the idea that an agent should anchor value
-on its internal state rather than on task-specific reward: a food cue is worth
-more to a hungry animal than to a sated one. The hypothesis riding along with it
-is that because internal state stays meaningful when the world rearranges, the
-prior should deliver continual learning without forgetting. It does not. The
-homeostatic learner is indistinguishable from an unshaped one on final survival
-and shows the most negative backward transfer of anything tested, forgetting most
-because it learns each task best. A directional probe locates what the prior does
-protect: across a task switch the valuation code, which resource to pursue given
-the current deficit, is retained in full, while the spatial code, where that
-resource is, is not.
+After an environment changes, what evidence shows that an agent still knows how
+to perform its old task? We study this question in a resource-management gridworld
+where resource locations move between tasks. We evaluate learned representations,
+old-task behavior, and recovery under a fixed interaction budget.
 
-The result I think travels past this testbed is about method. Probing whether the
-old code survives in the weights, against an untrained-network floor, is not
-diagnostic: the forgotten layout decodes well above that floor, but so it does
-out of a network that has never seen it, since agent position is in the
-observation and any competent navigator encodes distance to every cell.
-Continual-RL probing needs a never-trained-on-this-task control, and running one
-contradicted a claim in an earlier draft of this paper.
+A network trained only on the new layout still decodes the old layout's geometry
+almost as well as a network that experienced both. An untrained-network baseline
+alone would miss this problem: information that is easy to decode need not reflect
+memory of the old task. We also calibrate action probes against policies that
+ignore resource needs, separating a high diagnostic score from the capability it
+is meant to measure.
 
-Started as a project in George Konidaris's CSCI 2951X (Reintegrating AI) at
-Brown, and rewritten from that draft into a paper now in revision.
+The resulting evaluation checks pair negative controls with acquisition, old-task
+performance, and budgeted recovery. The empirical evidence is limited to small
+deterministic grids. This work grew from George Konidaris's CSCI 2951X
+(Reintegrating AI) at Brown; the manuscript is in revision.

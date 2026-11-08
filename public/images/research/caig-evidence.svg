@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="520" viewBox="0 0 640 520" role="img" aria-labelledby="title description">
+  <title id="title">From IPCC claims to retrieval evaluation</title>
+  <desc id="description">A method diagram. Claims link to report sections, those sections cite research papers, and the cited papers provide incomplete reference labels for evaluating retrieval.</desc>
+  <rect width="640" height="520" fill="#fff"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="40" y="42" font-size="18" letter-spacing="2" fill="#6b6962">METHOD OVERVIEW</text>
+    <g stroke="#b3afcc" stroke-width="2" fill="none">
+      <path d="M320 139v23m-6-6 6 6 6-6M320 243v23m-6-6 6 6 6-6M320 347v23m-6-6 6 6 6-6"/>
+    </g>
+    <g fill="#f7f6fc" stroke="#dedbe9" stroke-width="1.5">
+      <rect x="40" y="66" width="560" height="73" rx="8"/>
+      <rect x="40" y="170" width="560" height="73" rx="8"/>
+      <rect x="40" y="274" width="560" height="73" rx="8"/>
+      <rect x="40" y="378" width="560" height="73" rx="8"/>
+    </g>
+    <g font-size="22" fill="#716b9b" text-anchor="middle">
+      <text x="80" y="111">01</text><text x="80" y="215">02</text><text x="80" y="319">03</text><text x="80" y="423">04</text>
+    </g>
+    <g font-size="27" fill="#262332">
+      <text x="120" y="111">IPCC claims</text>
+      <text x="120" y="215">Linked report sections</text>
+      <text x="120" y="319">Cited research papers</text>
+      <text x="120" y="423">Retrieval evaluation</text>
+    </g>
+    <text x="320" y="492" text-anchor="middle" font-size="21" fill="#625e72">Traceable, incomplete relevance labels</text>
+  </g>
+</svg>

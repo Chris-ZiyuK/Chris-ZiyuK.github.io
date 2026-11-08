@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Footer from '../components/Footer.astro';
 import StatusPill from '../components/StatusPill.astro';
+import ResearchFigure from '../components/ResearchFigure.astro';
+import ResearchLinks from '../components/ResearchLinks.astro';
 import { site } from '../lib/site';
 
 const entries = (await getCollection('research')).sort(
@@ -29,15 +31,26 @@ const paragraphs = site.intro.split('\n\n').filter((p) => p.trim());
       </div>
     </header>
 
-    <section class="sec rise">
-      <h2>Research</h2>
+    <section class="sec showcase rise" aria-labelledby="selected-research">
+      <div class="section-heading">
+        <h2 id="selected-research">Selected research</h2>
+        <a href="/research/">All research <span aria-hidden="true">→</span></a>
+      </div>
       {entries.map((e) => (
-        <div class="brief-entry">
-          <div class="t"><a href={`/research/#${e.data.slug}`}>{e.data.short}</a></div>
-          <div class="d">
-            {e.data.role} · <StatusPill status={e.data.status} shape={e.data.status_shape} />
+        <article class="showcase-entry">
+          <ResearchFigure figure={e.data.figure} compact />
+          <div class="showcase-copy">
+            <p class="research-label">{e.data.label}</p>
+            <h3><a href={`/research/#${e.data.slug}`}>{e.data.short}</a></h3>
+            <div class="showcase-meta">
+              <StatusPill status={e.data.status} shape={e.data.status_shape} />
+              <span>{e.data.period}</span>
+            </div>
+            <p class="takeaway">{e.data.takeaway}</p>
+            <p class="contribution"><strong>My contribution.</strong> {e.data.contribution}</p>
+            <ResearchLinks links={e.data.links} details={`/research/#${e.data.slug}`} />
           </div>
-        </div>
+        </article>
       ))}
     </section>
 

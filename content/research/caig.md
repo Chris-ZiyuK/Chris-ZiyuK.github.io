@@ -1,41 +1,39 @@
 ---
 title: "CAIG: Navigating the Climate Science Deluge — Training Language Models to Assist in Comprehensive Assessments"
+label: "CAIG · Brown University"
 short: "Retrieval evaluation for climate assessment literature"
 slug: caig
 role: "Research Assistant, BATS Machine Learning Group (PI: Prof. Stephen Bach)"
 period: "2026–"
 status: "Ongoing"
 status_shape: solid
-order: 1
+order: 4
 tags: [information retrieval, RAG, evaluation, AI for science]
-# 标题用的是 NSF 的官方 award 名称,不是自拟的。可在下面的链接核对。
 funding: "NSF Award #2425380 · Brown University · 2024–2027"
+takeaway: "IPCC claims, report sections, and citations provide an evidence structure for evaluating climate-literature retrieval."
+contribution: "I build retrieval pipelines and an evaluation harness using citation-derived relevance judgments."
+figure:
+  src: /images/research/caig-evidence.svg
+  alt: "Method diagram linking an IPCC assessment claim to a report section and its cited papers, then to retrieval evaluation."
+  caption: "Method overview, not a result plot. Citation-derived labels are incomplete evidence of relevance, not exhaustive ground truth."
+  sourceLabel: "Project method overview"
 links:
   NSF award: "https://www.nsf.gov/awardsearch/show-award?AWD_ID=2425380"
 sources:
-  - "NSF Award Search #2425380 — 官方题名、PI、起止日期"
-  - "corpus/bats-lab.md — 研究问题与结果(数字不上公开页面)"
+  - "NSF Award Search #2425380 — official title, PI, and project dates"
+  - "corpus/bats-lab.md — retrieval pipelines and citation-based evaluation methodology"
 ---
 
-*Ongoing and unpublished. What follows describes the questions and the direction
-of the results, not final findings.*
+Climate assessments depend on finding papers that support a specific claim, beyond
+papers that merely discuss the same topic. My work in Stephen Bach's group focuses
+on how to evaluate that distinction when complete relevance judgments are not
+available.
 
-A climate scientist writing an assessment report needs to know which papers are
-worth reading, and which of them demonstrate a claim rather than mention it. No
-relevance judgments exist for a corpus of peer-reviewed climate literature, and
-the unit that matters is the paper, not the passage. My part of the project is
-evaluation. Rather than commission annotators, we treat the IPCC reports as a
-labelled dataset in their own right: each claim points at the papers supporting
-it, so the citation structure yields graded judgments directly. Whether to count
-a paper cited in the same chapter, on the same topic, but not evidence for the
-specific claim, is the decision that silently defines what "evidence" means
-downstream.
+We use the structure of IPCC assessment reports to connect claims, report sections, and
+cited literature. These links provide citation-derived relevance judgments for
+retrieval evaluation. They are incomplete: an uncited paper may still be relevant,
+and a chapter-level citation need not support every claim in that chapter.
 
-What the benchmark showed is that the loss happens earlier than the field
-assumes. Only a small fraction of cited evidence reaches the candidate pool at
-all, so the reranking stage most work targets is competing over what retrieval
-already missed. A separate comparison of LLM rerankers against trained
-cross-encoders at three model scales agrees: sliding-window reranking moves score
-between shallow and deep queries rather than adding any. The infrastructure is
-mine too, from the ColBERT pipelines and the fusion layer to the evaluation
-harness that runs them on a SLURM cluster.
+I build the retrieval pipelines, fusion layer, and evaluation harness used to
+compare retrieval and reranking systems. The project is ongoing; the diagram
+summarizes the method rather than presenting final results.

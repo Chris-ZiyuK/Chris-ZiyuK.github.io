@@ -1,0 +1,17 @@
+Research showcase figures — 2026-11-08
+
+colbert-controls.svg
+Selected conditions redrawn from Figure 1(a) of "Exact but Not Specific: A Measurement-Validity Analysis of Token-Level Name-Swap Audits in Late-Interaction Retrieval" (research manuscript, Ziyu Kong).
+Uses corrected-scoring estimates and both test-level and swap-pair cluster-bootstrap 95% intervals. Each displayed condition has 280 tests and five swap pairs; the numeral condition uses modified templates. This is a selected control panel, not evidence of equivalence.
+
+rl-probe-control.svg
+Redrawn from Figure 2(a) of "What Survives a Layout Shift? Diagnosing Retention in Continual Navigation" (research manuscript, Junhe Chen and Ziyu Kong, equal contribution).
+Layout-A linear decoding, homeostatic-reward condition. All 37 seed observations, original quasi-trimmed means, and 95% percentile-bootstrap intervals are retained. Episode counts are matched; interactions and updates are not.
+
+beaver-map.png and beaver-indices.png
+Unmodified example images from Collaborative Earth's Beaver Impacts Tool introduction:
+https://www.collaborative.earth/beaver-impacts-tool
+Map attribution remains visible in the original image. These are tool examples, not a study-wide causal estimate. The tool is a collaborative lab output.
+
+caig-evidence.svg
+Original method diagram describing citation-derived retrieval evaluation. It is not an experimental result; citation-derived relevance labels are incomplete.

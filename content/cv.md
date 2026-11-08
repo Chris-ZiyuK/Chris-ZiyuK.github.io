@@ -1,6 +1,7 @@
 ---
-updated: "2026-09-28"
+updated: "2026-11-08"
 synced_from: "PhD Application/01-core-materials/cv/cv-academic.md"
+# 2026-11-08: manuscript titles, authorship and claims checked against the latest research manuscripts.
 # 2026-08-14 决定:站上暂不放 PDF,只留 HTML 版 CV。
 # 现有那份 Chris.Kong_CV.pdf 页眉含手机号、第 2 页 REFERENCES 段含三位推荐人的
 # 办公地址与邮箱 —— 后者是别人的信息,不发。
@@ -34,20 +35,20 @@ BATS Machine Learning Research Group (P.I.: Dr. Stephen Bach) · Jan 2026 – pr
 
 **First-Author Research Project** (Neural Retrieval Auditing) — Brown University \
 Originated in CSCI 2952W (Critical AI and Data Studies) · Mar 2026 – present \
-*Token-Level Attribution of Identity-Induced Score Sensitivity in Late-Interaction Retrieval*
+*Exact but Not Specific: A Measurement-Validity Analysis of Token-Level Name-Swap Audits in Late-Interaction Retrieval*
 
 - Proposed Token Contribution Disparity (TCD), an exact token-level decomposition of counterfactual score shifts in late-interaction retrieval, attributing an identity-induced score change to individual query tokens.
-- Ran 55,440 controlled counterfactual tests with naturalistic-template and MS MARCO validations; function words absorb ~1.4× more identity-induced score change than content words, robust under cluster bootstraps and mixed-effects models, while BM25 shows no sensitivity under identical swaps.
-- After a full ACL Rolling Review cycle, audited my own implementation rather than only my numbers, found two defects that predated submission, and reran every test under corrected scoring. The main effect held; the headline claim that identity perturbations exceed matched non-identity ones did not, and I retracted it.
-- Rebuilding the paper around measurement validity: token-level counterfactual attribution cannot separate social bias from general perturbation sensitivity, and aggregate score-sensitivity metrics are scale-dependent and not comparable across architectures.
+- Audited the scoring implementation and tested the interpretation of token-level sensitivity using identity-name, numeral, and nonsense-word perturbations under corrected scoring.
+- Found that non-identity controls reproduce the function-word sensitivity pattern, limiting its interpretation as identity-specific; the results do not establish equivalence or an absence of bias.
+- Studied the measurement validity and scale dependence of attribution-based retrieval audits. Manuscript in revision.
 
-**First-Author Research Project** (Continual Reinforcement Learning) — Brown University \
+**Co-First-Author Research Project** (Continual Reinforcement Learning) — Brown University \
 Originated in CSCI 2951X (Reintegrating AI) · Mar 2026 – Sep 2026 \
-*What to Want, Not Where to Go: Localizing What a Homeostatic Prior Protects Across a Task Switch*
+*What Survives a Layout Shift? Diagnosing Retention in Continual Navigation*
 
-- Tested the standing claim that anchoring value on internal physiological state yields continual learning without forgetting, and found it does not: homeostatic shaping is indistinguishable from an unshaped learner and from experience replay on final survival, and shows the most negative backward transfer — it forgets most because it learns each task best.
-- Localized what the prior does protect with a directional probe: across a task switch the valuation code is fully retained while the spatial code is not.
-- Reported a methodological negative result for continual-RL probing: the forgotten task's geometry decodes at R²=0.93 against an untrained-network floor, but a network never trained on that task decodes it just as well (0.92; difference +0.003, CI [−0.042, +0.031]), so the standard probe is not diagnostic without a never-trained-on-the-task control.
+- Evaluated retention after resource locations change in a continual-navigation gridworld, comparing learned representations, old-task performance, and recovery under a fixed interaction budget.
+- Added a never-exposed control to representation probing: layout-A geometry decodes at R²=0.93 after A→B training and 0.92 after B-only training in the homeostatic-reward condition. High decodability alone therefore does not establish retained task-specific memory.
+- Paired negative controls with behavioral and recovery tests to distinguish diagnostic scores from the capabilities they are intended to measure. Evidence is limited to small deterministic grids; manuscript in revision.
 
 **Junior Research Scientist** — New York University, New York, NY \
 Lab member, [Beaver Lab](http://collaborative.earth/beaver-lab), Collaborative Earth (Lab Lead: Dr. Grace W. Lindsay) · Jan 2024 – Jun 2025, full-time from Jan 2025 \
@@ -73,8 +74,8 @@ Lab member, [Beaver Lab](http://collaborative.earth/beaver-lab), Collaborative E
 
 ## Manuscripts
 
-- **Ziyu Kong** and [co-author]. "What to Want, Not Where to Go: Localizing What a Homeostatic Prior Protects Across a Task Switch." Manuscript in revision.
-- **Ziyu Kong**. "Token-Level Attribution of Identity-Induced Score Sensitivity in Late-Interaction Retrieval." Manuscript in revision.
+- Junhe Chen\*, **Ziyu Kong**\*. "What Survives a Layout Shift? Diagnosing Retention in Continual Navigation." Manuscript in revision. \*Equal contribution.
+- **Ziyu Kong**. "Exact but Not Specific: A Measurement-Validity Analysis of Token-Level Name-Swap Audits in Late-Interaction Retrieval." Manuscript in revision.
 
 ## Awards
 

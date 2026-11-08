@@ -1,0 +1,12 @@
+---
+interface Props { links: Record<string, string>; details?: string }
+const { links, details } = Astro.props;
+---
+<div class="research-links">
+  {Object.entries(links).map(([label, href]) => (
+    <a class:list={['resource-link', { primary: label === 'Try demo' }]} href={href} rel="noopener">
+      {label}<span aria-hidden="true"> ↗</span>
+    </a>
+  ))}
+  {details && <a class="details-link" href={details}>Research details <span aria-hidden="true">→</span></a>}
+</div>
